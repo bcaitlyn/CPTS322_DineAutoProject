@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
+using starter_project.Pages;
 
 public class LoginModel : PageModel
 {
@@ -19,7 +20,7 @@ public class LoginModel : PageModel
 
     private Dictionary<string, string> users;
 
-    public void OnPost()
+    public IActionResult OnPost()
     {
         if(this.UserRole == "Admin")
         {
@@ -28,11 +29,13 @@ public class LoginModel : PageModel
             if (this.VerifyLogin())
             {
                 // Redirect to Admin Page (Can Create Owner Accounts)
+                return RedirectToPage("/AdminDashboard");
                 
             }
             else
             {
                 this.Message = "Username or Password was Incorrect, Please Try Again!";
+                return Page();
 
             }
         }
@@ -43,10 +46,12 @@ public class LoginModel : PageModel
             if (this.VerifyLogin())
             {
                 // Redirect to customer page
+                return RedirectToPage("/Index");
             }
             else
             {
                 this.Message = "Username or Password was Incorrect, Please Try Again!";
+                return Page();
 
             }
         }
@@ -57,16 +62,17 @@ public class LoginModel : PageModel
             if (this.VerifyLogin())
             {
                 // Redirect to Owner Page (Can Create Employee Accounts)
+                return RedirectToPage("/Index");
             }
             else
             {
                 this.Message = "Username or Password was Incorrect, Please Try Again!";
+                return Page();
 
             }
-
+            
         }
 
-        
         if(this.UserRole == "Employee")
         {
             EmployeeCustomerLoginMethods employeeCustomerLoginMethods = new EmployeeCustomerLoginMethods();
@@ -74,15 +80,18 @@ public class LoginModel : PageModel
             if (this.VerifyLogin())
             {
                 // Redirect to Employee Page
+                return RedirectToPage("/Index");
             }
             else
             {
                 this.Message = "Username or Password was Incorrect, Please Try Again!";
+                return Page();
 
             }
 
         }
-        
+        return Page();
+
     }
     
     public bool VerifyLogin()

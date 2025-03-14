@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
 
-namespace DineAuto.Pages
+namespace DineAuto.Pages.CreateAccounts
 {
     public abstract class CreateUser : PageModel
     {
@@ -38,16 +38,16 @@ namespace DineAuto.Pages
 
         public void AddUser(string username, string pw)
         {
-            if (!this.users.ContainsKey(username))
+            if (!users.ContainsKey(username))
             {
-                this.users[username] = BCrypt.Net.BCrypt.HashPassword(pw); ;
+                users[username] = BCrypt.Net.BCrypt.HashPassword(pw); ;
                 SaveUsers();
             }
         }
 
         public bool UserExists(string username)
         {
-            return this.users.ContainsKey(username);
+            return users.ContainsKey(username);
         }
 
 

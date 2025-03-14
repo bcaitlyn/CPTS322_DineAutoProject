@@ -18,26 +18,7 @@ namespace DineAuto.Pages.CreateAccounts
 
         }
 
-        internal override void SaveUsers()
-        {
-            string json = JsonConvert.SerializeObject(this.users, Formatting.Indented);
-            System.IO.File.WriteAllText(FilePath, json);
-        }
-
-
-
-        public void OnPost()
-        {
-            if (!this.UserExists(Username))
-            {
-                this.AddUser(Username, Password);
-                this.Message = "Account successfully created";
-            }
-            else
-            {
-                this.Message = "Username already exists please try again";
-            }
-        }
+       
 
     }
 }

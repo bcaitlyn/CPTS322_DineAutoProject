@@ -24,6 +24,14 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQWNjb3VudHNcQ3JlYXRlQ3VzdG9tZXJBY2NvdW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/CreateAccounts/CreateEmployeeAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQWNjb3VudHNcQ3JlYXRlRW1wbG95ZWVBY2NvdW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/CreateAccounts/CreateOwnerAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQWNjb3VudHNcQ3JlYXRlT3duZXJBY2NvdW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

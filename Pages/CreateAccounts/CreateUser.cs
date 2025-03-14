@@ -24,7 +24,11 @@ namespace DineAuto.Pages.CreateAccounts
         {
 
         }
-        internal abstract void SaveUsers();
+        public void SaveUsers()
+        {
+            string json = JsonConvert.SerializeObject(this.users, Formatting.Indented);
+            System.IO.File.WriteAllText(FilePath, json);
+        }
 
         internal Dictionary<string, string> LoadUsers()
         {
@@ -50,6 +54,18 @@ namespace DineAuto.Pages.CreateAccounts
             return users.ContainsKey(username);
         }
 
+        public void OnPost()
+        {
+            if (!this.UserExists(Username))
+            {
+                this.AddUser(Username, Password);
+                this.Message = "Account successfully created";
+            }
+            else
+            {
+                this.Message = "Username already exists please try again";
+            }
+        }
 
     }
 }

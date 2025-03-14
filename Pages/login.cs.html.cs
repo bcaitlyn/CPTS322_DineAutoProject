@@ -29,7 +29,7 @@ public class LoginModel : PageModel
             if (this.VerifyLogin())
             {
                 // Redirect to Admin Page (Can Create Owner Accounts)
-                return RedirectToPage("/AdminDashboard");
+                return RedirectToPage("/UserDashboards/AdminDashboard");
                 
             }
             else
@@ -62,7 +62,7 @@ public class LoginModel : PageModel
             if (this.VerifyLogin())
             {
                 // Redirect to Owner Page (Can Create Employee Accounts)
-                return RedirectToPage("/Index");
+                return RedirectToPage("/UserDashboards/OwnerDashboard");
             }
             else
             {

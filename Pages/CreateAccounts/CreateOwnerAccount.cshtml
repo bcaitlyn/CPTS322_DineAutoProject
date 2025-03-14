@@ -1,0 +1,37 @@
+﻿@page
+@model DineAuto.Pages.CreateAccounts.CreateOwnerAccountModel
+@{
+	ViewData["Title"] = "Create Owner Account";
+}
+<h2>Create a DineAuto Owner account</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" id="username" asp-for="Username" name="Username" class="form-control" required>
+    </div>
+
+    @if (!string.IsNullOrEmpty(Model.Message))
+    {
+        <div class="alert alert-danger" role="alert" style="max-width: 25%;">
+            @Model.Message
+        </div>
+    }
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" asp-for="Password" name="Password" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Account</button>
+</form>
+
+<script>
+    document.getElementById("userForm").addEventListener("submit", function(event))
+    {
+        if (!username || !password) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        CreateAccountModel.AddUser(username, password);
+    }
+</script>

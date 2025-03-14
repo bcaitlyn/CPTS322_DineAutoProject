@@ -192,3 +192,106 @@ C:\Users\emily\OneDrive\Desktop\WSU\322\DineAuto\obj\Debug\net9.0\refint\starter
 C:\Users\emily\OneDrive\Desktop\WSU\322\DineAuto\obj\Debug\net9.0\starter project.pdb
 C:\Users\emily\OneDrive\Desktop\WSU\322\DineAuto\obj\Debug\net9.0\starter project.genruntimeconfig.cache
 C:\Users\emily\OneDrive\Desktop\WSU\322\DineAuto\obj\Debug\net9.0\ref\starter project.dll
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\bin\Debug\net9.0\appsettings.Development.json
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\bin\Debug\net9.0\appsettings.json
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\bin\Debug\net9.0\starter project.staticwebassets.endpoints.json
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\bin\Debug\net9.0\starter project.staticwebassets.runtime.json
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\bin\Debug\net9.0\starter project.exe
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\bin\Debug\net9.0\starter project.deps.json
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\bin\Debug\net9.0\starter project.runtimeconfig.json
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\bin\Debug\net9.0\starter project.dll
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\bin\Debug\net9.0\starter project.pdb
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.AssemblyInfoInputs.cache
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.AssemblyInfo.cs
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.csproj.CoreCompileInputs.cache
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.RazorAssemblyInfo.cache
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.RazorAssemblyInfo.cs
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.sourcelink.json
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\scopedcss\bundle\starter project.styles.css
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\scopedcss\projectbundle\starter project.bundle.scp.css
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\ufizrdq8t1-b9sayid5wm.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\x5foxg7sf0-61n19gt1b8.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\a0e3ukycvs-xtxxf3hu2r.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\lhciwzfm3b-bqjiyaj88i.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\nmifwffcut-c2jlpeoesf.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\gpc9a1wg60-erw9l3u2r3.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\3v7yr54w36-aexeepp0ev.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\0zxmcwtxba-d7shbmvgxk.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\cgfp1jfjil-ausgxo2sd3.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\k3v1dkznjz-k8d9w2qqmf.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\gauum48d7y-cosvhxvwiu.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\wh5u990vkd-ub07r2b239.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\p91u4osirh-fvhpjtyr6v.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\jy8z59m9ah-b7pk76d08c.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\0q33ez4rgj-fsbi9cje9m.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\xms9t9r1b7-rzd6atqjts.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\kh8z999i7q-ee0r1s7dh0.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\93mw9w6bq9-dxx9fxp4il.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\qwl7qxcqjg-jd9uben2k1.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\8uyc92eyg6-khv3u5hwcm.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\mr24l9gyft-r4e9w2rdcm.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\a7yqtmeqje-lcd1t2u6c8.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\0vmgbbh3nb-c2oey78nd0.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\x2aesjc93v-tdbxkamptv.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\jfz0tdwudo-j5mq2jizvt.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\enacdrxp3h-06098lyss8.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\0jwol1yp9k-nvvlpmu67g.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\r7de6xmbru-s35ty4nyc5.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\b99iivqzvu-pj5nd1wqec.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\bxigfmpq93-46ein0sx1k.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\x9w6vhyiej-v0zj4ognzu.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\yeukl5fbh2-37tfw0ft22.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\9ohdbil8z9-hrwsygsryq.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\czlh66ajx6-pk9g2wxc8p.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\vw5862ytls-ft3s53vfgj.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\b6i9awf1su-6cfz1n2cew.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\yqoayweuw9-6pdc2jztkx.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\splnnhdksp-493y06b0oq.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\jxhcuqfh3j-iovd86k7lj.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\2etcyrc04e-vr1egmr9el.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\9oelxiu096-kbrnm935zg.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\qp9zgcsqpv-jj8uyg4cgr.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\pt1sxbyi3m-y7v9cxd14o.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\ywhbfelc22-notf2xhcfb.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\2wr6qp19l2-h1s4sie4z3.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\psvmomsjtu-63fj8s7r0e.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\9r7hk9332b-0j3bgjxly4.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\tjpwx8s784-47otxtyo56.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\fik3w2i9lk-4v8eqarkd7.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\gy3vrcfqu2-356vix0kms.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\zfnzjyoy5w-83jwlth58m.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\qjk35bi011-mrlpezrjn3.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\mjjtpeho9f-lzl9nlhx6b.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\wo0ek6tsex-ag7o75518u.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\i2se8zedqq-x0q3zqp4vz.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\dh5vjdook6-0i3buxo5is.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\ve6areehgk-o1o13a6vjx.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\ohg0p4gdcg-ttgo8qnofa.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\hwqvpjiltm-2z0ns9nrw6.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\nefqpaxv3b-muycvpuwrr.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\fm53a4w4f2-87fc7y1x7t.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\3yd57yf7na-mlv21k5csn.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\ivpwvy99qj-zjn2f7j94s.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\compressed\negj7f7b17-zjn2f7j94s.gz
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\staticwebassets.build.json
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\staticwebassets.development.json
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\staticwebassets\msbuild.starter project.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\staticwebassets\msbuild.starter project.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\staticwebassets\msbuild.build.starter project.props
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.starter project.props
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.starter project.props
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\staticwebassets.pack.json
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.dll
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\refint\starter project.dll
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.pdb
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.genruntimeconfig.cache
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\ref\starter project.dll
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\bin\Debug\net9.0\Tables\customers.json
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.csproj.AssemblyReference.cache
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\starter .4A094777.Up2Date
+C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\bin\Debug\net9.0\BCrypt.Net.dll

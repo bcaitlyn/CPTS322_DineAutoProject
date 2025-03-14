@@ -295,3 +295,15 @@ C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0
 C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\bin\Debug\net9.0\Newtonsoft.Json.dll
 C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\obj\Debug\net9.0\starter .4A094777.Up2Date
 C:\Users\emily\OneDrive\Desktop\WSU\322\CPTS322_DineAutoProject\bin\Debug\net9.0\BCrypt.Net.dll
+C:\Users\kaden\Desktop\CPTS CLASSES\CPTS322\CPTS322_DineAutoProj\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.csproj.AssemblyReference.cache
+C:\Users\kaden\Desktop\CPTS CLASSES\CPTS322\CPTS322_DineAutoProj\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kaden\Desktop\CPTS CLASSES\CPTS322\CPTS322_DineAutoProj\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.AssemblyInfoInputs.cache
+C:\Users\kaden\Desktop\CPTS CLASSES\CPTS322\CPTS322_DineAutoProj\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.AssemblyInfo.cs
+C:\Users\kaden\Desktop\CPTS CLASSES\CPTS322\CPTS322_DineAutoProj\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.csproj.CoreCompileInputs.cache
+C:\Users\kaden\Desktop\CPTS CLASSES\CPTS322\CPTS322_DineAutoProj\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\kaden\Desktop\CPTS CLASSES\CPTS322\CPTS322_DineAutoProj\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.RazorAssemblyInfo.cache
+C:\Users\kaden\Desktop\CPTS CLASSES\CPTS322\CPTS322_DineAutoProj\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.RazorAssemblyInfo.cs
+C:\Users\kaden\Desktop\CPTS CLASSES\CPTS322\CPTS322_DineAutoProj\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.sourcelink.json
+C:\Users\kaden\Desktop\CPTS CLASSES\CPTS322\CPTS322_DineAutoProj\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.dll
+C:\Users\kaden\Desktop\CPTS CLASSES\CPTS322\CPTS322_DineAutoProj\CPTS322_DineAutoProject\obj\Debug\net9.0\refint\starter project.dll
+C:\Users\kaden\Desktop\CPTS CLASSES\CPTS322\CPTS322_DineAutoProj\CPTS322_DineAutoProject\obj\Debug\net9.0\starter project.pdb

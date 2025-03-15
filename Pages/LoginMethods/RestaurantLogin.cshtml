@@ -1,0 +1,28 @@
+@page
+@model DineAuto.Pages.Login.RestaurantLoginModel
+@{
+    ViewData["Title"] = "Restaurant Login";
+}
+
+<div class="container mt-4">
+    <h2 class="display-4">Restaurant Log In</h2>
+
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <div class="alert alert-danger" role="alert">
+            @Model.ErrorMessage
+        </div>
+    }
+
+    <form method="post" class="w-50">
+        <div class="mb-3 text-start">
+            <label for="RestaurantName" class="form-label">Restaurant Name</label>
+            <input type="text" id="RestaurantName" name="RestaurantName" class="form-control" style="max-width: 600px;" required>
+        </div>
+        <div class="mb-3 text-start">
+            <label for="Password" class="form-label">Password</label>
+            <input type="password" id="Password" name="Password" class="form-control" style="max-width: 600px;" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Log In</button>
+    </form>
+</div>

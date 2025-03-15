@@ -52,6 +52,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvbG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/LoginMethods/RestaurantLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW5NZXRob2RzL1Jlc3RhdXJhbnRMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -70,6 +74,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/UserDashboards/OwnerDashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXNlckRhc2hib2FyZHMvT3duZXJEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/UserDashboards/RestaurantDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXNlckRhc2hib2FyZHMvUmVzdGF1cmFudERhc2hib2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/_ViewImports.cshtml]

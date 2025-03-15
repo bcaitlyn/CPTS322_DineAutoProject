@@ -17,7 +17,8 @@ namespace DineAuto.Pages.CreateAccounts
 
         public string? ErrorMessage { get; set; } // Holds the error message
 
-        private readonly string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Tables", "restaurants.json");
+        private readonly string restaurantFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Tables", "restaurants.json");
+        private readonly string menusDirectoryPath = Path.Combine(Directory.GetCurrentDirectory(), "Tables", "Menus");
 
         public void OnGet()
         {
@@ -31,11 +32,17 @@ namespace DineAuto.Pages.CreateAccounts
                 return Page();
             }
 
+            // Ensure that the Menus directory exists
+            if (!Directory.Exists(menusDirectoryPath))
+            {
+                Directory.CreateDirectory(menusDirectoryPath);
+            }
+
             Dictionary<string, string> restaurants;
 
-            if (System.IO.File.Exists(filePath) && new FileInfo(filePath).Length > 0)
+            if (System.IO.File.Exists(restaurantFilePath) && new FileInfo(restaurantFilePath).Length > 0)
             {
-                var jsonData = System.IO.File.ReadAllText(filePath);
+                var jsonData = System.IO.File.ReadAllText(restaurantFilePath);
                 restaurants = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonData) ?? new Dictionary<string, string>();
             }
             else
@@ -53,7 +60,15 @@ namespace DineAuto.Pages.CreateAccounts
             // Store hashed password
             restaurants[RestaurantName] = BCrypt.Net.BCrypt.HashPassword(Password);
 
-            System.IO.File.WriteAllText(filePath, JsonSerializer.Serialize(restaurants, new JsonSerializerOptions { WriteIndented = true }));
+            // Save updated restaurants.json file
+            System.IO.File.WriteAllText(restaurantFilePath, JsonSerializer.Serialize(restaurants, new JsonSerializerOptions { WriteIndented = true }));
+
+            // Create an empty menu TXT file for the restaurant
+            string menuFilePath = Path.Combine(menusDirectoryPath, $"{RestaurantName}Menu.txt");
+            if (!System.IO.File.Exists(menuFilePath))
+            {
+                System.IO.File.Create(menuFilePath).Dispose(); // Creates an empty file
+            }
 
             return RedirectToPage("/UserDashboards/OwnerDashboard");
         }

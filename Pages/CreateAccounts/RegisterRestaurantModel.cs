@@ -5,7 +5,7 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace DineAuto.Pages
+namespace DineAuto.Pages.CreateAccounts
 {
     public class RegisterRestaurantModel : PageModel
     {
@@ -15,7 +15,9 @@ namespace DineAuto.Pages
         [BindProperty]
         public string? Password { get; set; }
 
-        private readonly string filePath = "Tables/restaurants.json";
+        public string? ErrorMessage { get; set; } // Holds the error message
+
+        private readonly string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Tables", "restaurants.json");
 
         public void OnGet()
         {
@@ -39,6 +41,13 @@ namespace DineAuto.Pages
             else
             {
                 restaurants = new Dictionary<string, string>();
+            }
+
+            // Check if restaurant already exists
+            if (restaurants.ContainsKey(RestaurantName))
+            {
+                ErrorMessage = "A restaurant with this name already exists.";
+                return Page();
             }
 
             // Store hashed password

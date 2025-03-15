@@ -1,11 +1,19 @@
 @page
-@model DineAuto.Pages.RegisterRestaurantModel
+@model DineAuto.Pages.CreateAccounts.RegisterRestaurantModel
 @{
     ViewData["Title"] = "Register Restaurant";
 }
 
 <div class="container mt-4">
     <h2 class="display-4">Register Restaurant</h2>
+
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <div class="alert alert-danger" role="alert">
+            @Model.ErrorMessage
+        </div>
+    }
+
     <form method="post" class="w-50">
         <div class="mb-3 text-start">
             <label for="RestaurantName" class="form-label">Restaurant Name</label>

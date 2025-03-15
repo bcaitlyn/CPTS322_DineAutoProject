@@ -20,8 +20,12 @@ namespace DineAuto.Pages.UserDashboards
         [BindProperty]
         public string Description { get; set; }
 
+        [BindProperty]
+        public List<string> SelectedItems { get; set; } = new List<string>();
+
         public List<MenuItem> MenuItems { get; set; } = new List<MenuItem>();
         public bool ShowAddItemForm { get; set; }
+        public bool ShowDeleteCheckboxes { get; set; }
 
         private readonly string menusDirectoryPath = Path.Combine(Directory.GetCurrentDirectory(), "Tables", "Menus");
 
@@ -58,29 +62,50 @@ namespace DineAuto.Pages.UserDashboards
             {
                 ShowAddItemForm = true;
             }
+            else if (action == "delete")
+            {
+                ShowDeleteCheckboxes = true;
+            }
         }
 
         public IActionResult OnPost()
         {
-            if (string.IsNullOrEmpty(RestaurantName) || string.IsNullOrEmpty(ItemName) || string.IsNullOrEmpty(Price) || string.IsNullOrEmpty(Description))
+            if (!string.IsNullOrEmpty(ItemName) && !string.IsNullOrEmpty(Price) && !string.IsNullOrEmpty(Description))
             {
-                return Page();
+                string menuFilePath = Path.Combine(menusDirectoryPath, $"{RestaurantName}Menu.txt");
+
+                if (!Price.StartsWith("$"))
+                {
+                    Price = "$" + Price;
+                }
+
+                string newItemEntry = $"{ItemName},{Price},{Description}";
+
+                using (StreamWriter sw = System.IO.File.AppendText(menuFilePath))
+                {
+                    sw.WriteLine(newItemEntry);
+                }
             }
-
-            string menuFilePath = Path.Combine(menusDirectoryPath, $"{RestaurantName}Menu.txt");
-
-            // Ensure the price has a "$" sign
-            if (!Price.StartsWith("$"))
+            else if (SelectedItems.Count > 0)
             {
-                Price = "$" + Price;
-            }
+                string menuFilePath = Path.Combine(menusDirectoryPath, $"{RestaurantName}Menu.txt");
 
-            string newItemEntry = $"{ItemName},{Price},{Description}";
+                if (System.IO.File.Exists(menuFilePath))
+                {
+                    var lines = System.IO.File.ReadAllLines(menuFilePath);
+                    var updatedLines = new List<string>();
 
-            // Append the new item to the menu file
-            using (StreamWriter sw = System.IO.File.AppendText(menuFilePath))
-            {
-                sw.WriteLine(newItemEntry);
+                    foreach (var line in lines)
+                    {
+                        var parts = line.Split(',', 3);
+                        if (parts.Length == 3 && !SelectedItems.Contains(parts[0].Trim()))
+                        {
+                            updatedLines.Add(line);
+                        }
+                    }
+
+                    System.IO.File.WriteAllLines(menuFilePath, updatedLines);
+                }
             }
 
             return RedirectToPage("/UserDashboards/RestaurantDashboard", new { restaurantName = RestaurantName });

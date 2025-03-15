@@ -508,3 +508,4 @@ C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAut
 /Users/user/Documents/Git Hub/CPTS322_DineAutoProject/obj/Debug/net9.0/starter project.pdb
 /Users/user/Documents/Git Hub/CPTS322_DineAutoProject/obj/Debug/net9.0/starter project.genruntimeconfig.cache
 /Users/user/Documents/Git Hub/CPTS322_DineAutoProject/obj/Debug/net9.0/ref/starter project.dll
+/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/bin/Debug/net9.0/Tables/restaurants.json

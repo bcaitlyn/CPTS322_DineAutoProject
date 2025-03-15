@@ -1,0 +1,20 @@
+@page
+@model DineAuto.Pages.RegisterRestaurantModel
+@{
+    ViewData["Title"] = "Register Restaurant";
+}
+
+<div class="text-center">
+    <h2 class="display-1">Register Restaurant</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="RestaurantName">Restaurant Name</label>
+            <input type="text" id="RestaurantName" name="RestaurantName" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="Password">Password</label>
+            <input type="password" id="Password" name="Password" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>

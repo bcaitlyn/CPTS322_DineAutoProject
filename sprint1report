@@ -1,17 +1,14 @@
 # Sprint 1 Report
-Video Link:
+Video Link: https://youtu.be/pdPLrn-DJaY
+
 ## What's New (User Facing)
 * Feature 1: Customer registration and login
 * Feature 2: Employee registration and login
 * Feature 3: Owner registration and login
 * Feature 4: Add/remove/modify restaurant
+*Feature 5: Restaurant Catalog/Browse Menu
 
 ## Work Summary (Developer Facing)
-Provide a one paragraph synopsis of what your team accomplished this sprint. Don't
-repeat the "What's New" list of features. Instead, help the instructor understand
-how you went about the work described there, any barriers you overcame, and any
-significant learnings for your team.
-
 For this sprint our team determined and implemented the various roles a user can take in the Dine Auto program. This is either customer, restaurant employee or owner. For features 1-3, we each took on a user role and implemented account created and login for each. A barrier we overcame is learning a new language and framework for web development (C# and html). Overall, we learned how to make a local website with json storage for input data.
 
 ## Unfinished Work
@@ -38,7 +35,8 @@ https://github.com/users/bcaitlyn/projects/2/views/1?pane=issue&itemId=102075337
 
 ## Incomplete Issues/User Stories
 Here are links to issues we worked on but did not complete in this sprint:
-* URL of restaurant catalogue while this is mostly complete, there is a disconnect between this and the implementation of modify restaurant.
+* https://github.com/users/bcaitlyn/projects/2?pane=issue&itemId=102430390&issue=bcaitlyn%7CCPTS322_DineAutoProject%7C30
+While this is mostly complete, it did not make it to the review due to time constraints and its interdependence on add/remove/modify restaurants. For now it is nonfunctional and still contained in a separated branch.
 
 * https://github.com/bcaitlyn/CPTS322_DineAutoProject/issues/13 - (applies to all user logins) has bugs related to login states, due to lack of time this bug was not fixed.
 

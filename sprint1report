@@ -1,0 +1,75 @@
+# Sprint 1 Report
+Video Link:
+## What's New (User Facing)
+* Feature 1: Customer registration and login
+* Feature 2: Employee registration and login
+* Feature 3: Owner registration and login
+* Feature 4: Add/remove/modify restaurant
+
+## Work Summary (Developer Facing)
+Provide a one paragraph synopsis of what your team accomplished this sprint. Don't
+repeat the "What's New" list of features. Instead, help the instructor understand
+how you went about the work described there, any barriers you overcame, and any
+significant learnings for your team.
+
+For this sprint our team determined and implemented the various roles a user can take in the Dine Auto program. This is either customer, restaurant employee or owner. For features 1-3, we each took on a user role and implemented account created and login for each. A barrier we overcame is learning a new language and framework for web development (C# and html). Overall, we learned how to make a local website with json storage for input data.
+
+## Unfinished Work
+If applicable, explain the work you did not finish in this sprint. For issues/user
+stories in the current sprint that have not been closed, (a) any progress toward
+completion of the issues has been clearly tracked (by checking the checkboxes of
+acceptance criteria), (b) a comment has been added to the issue to explain why the
+issue could not be completed (e.g., "we ran out of time" or "we did not anticipate
+it would be so much work"), and (c) the issue is added to a subsequent sprint, so
+that it can be addressed later.
+So far, the page for an owner to add and manage a restaurant is not connected to the UI (not accessible by end user yet)
+
+(Based the issues/bugs in kanban) need integration, redirections, etc.
+
+## Completed Issues/User Stories
+Here are links to the issues that we completed in this sprint:
+* URL of issue 1: Customer registration: https://github.com/users/bcaitlyn/projects/2/views/1?pane=issue&itemId=102074455&issue=bcaitlyn%7CCPTS322_DineAutoProject%7C10
+* URL of issue 2: Owner registration: https://github.com/users/bcaitlyn/projects/2/views/1?pane=issue&itemId=102074966&issue=bcaitlyn%7CCPTS322_DineAutoProject%7C11
+* URL of issue 3: Employee registration: https://github.com/users/bcaitlyn/projects/2/views/1?pane=issue&itemId=102075019&issue=bcaitlyn%7CCPTS322_DineAutoProject%7C12
+* URL of issue 4: Add/remove/modify restaurant: https://github.com/users/bcaitlyn/projects/2/views/1?pane=issue&itemId=102075586&issue=bcaitlyn%7CCPTS322_DineAutoProject%7C16
+*URL of issue 5: All user logins:
+https://github.com/users/bcaitlyn/projects/2/views/1?pane=issue&itemId=102075337&issue=bcaitlyn%7CCPTS322_DineAutoProject%7C13
+
+
+## Incomplete Issues/User Stories
+Here are links to issues we worked on but did not complete in this sprint:
+* URL of restaurant catalogue while this is mostly complete, there is a disconnect between this and the implementation of modify restaurant.
+
+* https://github.com/bcaitlyn/CPTS322_DineAutoProject/issues/13 - (applies to all user logins) has bugs related to login states, due to lack of time this bug was not fixed.
+
+* https://github.com/users/bcaitlyn/projects/2/views/1?pane=issue&itemId=102428872&issue=bcaitlyn%7CCPTS322_DineAutoProject%7C29 - While the setup for the owner to register a restaurant is complete there is no way to track which owner created which restaurant. This can be fixed in the next sprint by modifying the .txt to include the owner's credentials to know who created it.
+
+Examples of explanations (Remove this section when you save the file):
+* "We ran into a complication we did not anticipate (explain briefly)."
+* "We decided that the feature did not add sufficient value for us to work on it
+in this sprint (explain briefly)."
+* "We could not reproduce the bug" (explain briefly).
+* "We did not get to this issue because..." (explain briefly)
+
+## Code Files for Review
+Please review the following code files, which were actively developed during this
+sprint, for quality:
+* Pages Folder. All the code files contained in this folder were actively developed in the sprint : https://github.com/bcaitlyn/CPTS322_DineAutoProject/tree/main/Pages
+* Tables folder. All the code files contained in this folder were actively developed in the sprint:
+https://github.com/bcaitlyn/CPTS322_DineAutoProject/tree/main/Tables
+
+## Retrospective Summary
+Here's what went well:
+* Customer Registration
+* Owner Registration
+* Employee Registration
+Here's what we'd like to improve:
+* Customer Login
+* Owner Login
+* 
+Here are changes we plan to implement in the next sprint:
+* Fix logins to add persistent login states [B002]
+* Ensure completed pages are reachable through UI (add redirection)  [B003]
+* Track restaurant owner [B004]
+* Improve user experience (UI appearance).
+* Improve documentation, more commenting.

@@ -1,0 +1,24 @@
+@page
+@model DineAuto.Pages.Catalogs.RestaurantCatalog
+@{
+	ViewData["Title"] = "Restaurant Catalog";
+}
+
+<h2>Restaurant Catalog</h2>
+
+<table class="table">
+    <thread>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thread>
+
+    <tbody>
+        @foreach(var restaurant in Model.Restaurants)
+	{
+        <tr>
+            <td>@restaurant.Name</td>
+        </tr>
+	}
+    </tbody>
+</table>

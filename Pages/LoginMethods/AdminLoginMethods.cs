@@ -3,6 +3,11 @@ using System.Runtime.CompilerServices;
 
 namespace DineAuto.Pages.LoginMethods
 {
+    /// <summary>
+    /// Created by Kaden
+    /// Each one of these login methods inherits from our Base class login methods.
+    /// The purpose of these classes are to load the correct type of users into the dictionary. 
+    /// </summary>
     public class AdminLoginMethods : LoginMethods
     {
 

@@ -64,50 +64,50 @@
                         </ul>
                     }
                     <!-- If an owner is logged in display owner controls + logout-->
-                    else if (HttpContextAccessor.HttpContext.Session.GetString("UserRole") == "Owner")
+                    @if (HttpContextAccessor.HttpContext.Session.GetString("UserRole") == "Owner")
                     {
-                        <ul class="navbar-nav flex-grow-2">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/CreateAccounts/CreateOwnerAccount">Create Owner Account</a>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav flex-grow-2">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/CreateAccounts/CreateEmployeeAccount">Create Employee Account</a>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav flex-grow-2">
-                            <li class="nav-item">
-                                <form id="logoutForm" method="post" asp-page="/login" asp-page-handler="Logout" style="display: inline;">
-                                    <button type="submit" style="display: none;">Log Out</button>
-                                </form>
-                                <a class="nav-link text-dark" href="#" onclick="document.getElementById('logoutForm').submit()">Log Out</a>
-                            </li>
-                        </ul>
+                    <ul class="navbar-nav flex-grow-2">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/CreateAccounts/CreateOwnerAccount">Create Owner Account</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav flex-grow-2">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/CreateAccounts/CreateEmployeeAccount">Create Employee Account</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav flex-grow-2">
+                        <li class="nav-item">
+                            <form id="logoutForm" method="post" asp-page="/login" asp-page-handler="Logout" style="display: inline;">
+                                <button type="submit" style="display: none;">Log Out</button>
+                            </form>
+                            <a class="nav-link text-dark" href="#" onclick="document.getElementById('logoutForm').submit()">Log Out</a>
+                        </li>
+                    </ul>
                     }
                     <!-- If an employee is logged in display logout-->
-                    else if (HttpContextAccessor.HttpContext.Session.GetString("UserRole") == "Employee")
+                    @if (HttpContextAccessor.HttpContext.Session.GetString("UserRole") == "Employee")
                     {
-                        <ul class="navbar-nav flex-grow-2">
-                            <li class="nav-item">
-                                <form id="logoutForm" method="post" asp-page="/login" asp-page-handler="Logout" style="display: inline;">
-                                    <button type="submit" style="display: none;">Log Out</button>
-                                </form>
-                                <a class="nav-link text-dark" href="#" onclick="document.getElementById('logoutForm').submit()">Log Out</a>
-                            </li>
-                        </ul>
+                    <ul class="navbar-nav flex-grow-2">
+                        <li class="nav-item">
+                            <form id="logoutForm" method="post" asp-page="/login" asp-page-handler="Logout" style="display: inline;">
+                                <button type="submit" style="display: none;">Log Out</button>
+                            </form>
+                            <a class="nav-link text-dark" href="#" onclick="document.getElementById('logoutForm').submit()">Log Out</a>
+                        </li>
+                    </ul>
                     }
                     <!-- If an customer is logged in display logout-->
-                    else if (HttpContextAccessor.HttpContext.Session.GetString("UserRole") == "Customer")
+                    @if (HttpContextAccessor.HttpContext.Session.GetString("UserRole") == "Customer")
                     {
-                        <ul class="navbar-nav flex-grow-2">
-                            <li class="nav-item">
-                                <form id="logoutForm" method="post" asp-page="/login" asp-page-handler="Logout" style="display: inline;">
-                                    <button type="submit" style="display: none;">Log Out</button>
-                                </form>
-                                <a class="nav-link text-dark" href="#" onclick="document.getElementById('logoutForm').submit()">Log Out</a>
-                            </li>
-                        </ul>
+                    <ul class="navbar-nav flex-grow-2">
+                        <li class="nav-item">
+                            <form id="logoutForm" method="post" asp-page="/login" asp-page-handler="Logout" style="display: inline;">
+                                <button type="submit" style="display: none;">Log Out</button>
+                            </form>
+                            <a class="nav-link text-dark" href="#" onclick="document.getElementById('logoutForm').submit()">Log Out</a>
+                        </li>
+                    </ul>
                     }
                 </div>
             </div>

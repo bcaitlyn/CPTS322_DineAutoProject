@@ -63,6 +63,7 @@
                             </li>
                         </ul>
                     }
+                    <!-- If an owner is logged in display owner controls + logout-->
                     else if (HttpContextAccessor.HttpContext.Session.GetString("UserRole") == "Owner")
                     {
                         <ul class="navbar-nav flex-grow-2">
@@ -84,6 +85,7 @@
                             </li>
                         </ul>
                     }
+                    <!-- If an employee is logged in display logout-->
                     else if (HttpContextAccessor.HttpContext.Session.GetString("UserRole") == "Employee")
                     {
                         <ul class="navbar-nav flex-grow-2">
@@ -95,6 +97,7 @@
                             </li>
                         </ul>
                     }
+                    <!-- If an customer is logged in display logout-->
                     else if (HttpContextAccessor.HttpContext.Session.GetString("UserRole") == "Customer")
                     {
                         <ul class="navbar-nav flex-grow-2">

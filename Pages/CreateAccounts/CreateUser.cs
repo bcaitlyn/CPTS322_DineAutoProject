@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 
 namespace DineAuto.Pages.CreateAccounts
 {
+   
     public abstract class CreateUser : PageModel
     {
 
@@ -20,10 +21,6 @@ namespace DineAuto.Pages.CreateAccounts
         [BindProperty]
         public string UserRole { get; }
 
-        public CreateUser()
-        {
-
-        }
         public void SaveUsers()
         {
             string json = JsonConvert.SerializeObject(this.users, Formatting.Indented);

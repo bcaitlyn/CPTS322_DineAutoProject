@@ -5,8 +5,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
 using starter_project.Pages;
 
+/// <summary>
+/// Login Methods worked on by Emily and Kaden.
+/// Essentially this deals with all login functionality and handles redirects.
+/// </summary>
 public class LoginModel : PageModel
 {
+    // Bind property tags signify any sort of data that is gathered from html files. So if a user types in a username, the bind property binds that value and stores it in the data member.
     [BindProperty]
     public string UserRole { get; set; }
 
@@ -20,6 +25,12 @@ public class LoginModel : PageModel
 
     private Dictionary<string, string> users;
 
+    /// <summary>
+    /// Kaden Metzger Worked on 3-25-25
+    /// This method executes after hitting the login button.
+    /// It loads all users (depending on the type of user) and checks if the login credentials match.
+    /// </summary>
+    /// <returns>returns a webpage that redirects the user.</returns>
     public IActionResult OnPost()
     {
         if(this.UserRole == "Admin")
@@ -28,8 +39,8 @@ public class LoginModel : PageModel
             this.users = adminLoginMethods.LoadUsers();
             if (this.VerifyLogin())
             {
-                // Redirect to Admin Page (Can Create Owner Accounts)
-                return RedirectToPage("/UserDashboards/AdminDashboard");
+                // Redirect to home page
+                return RedirectToPage("/Index");
                 
             }
             else
@@ -45,7 +56,7 @@ public class LoginModel : PageModel
             this.users = customerLoginMethods.LoadUsers();
             if (this.VerifyLogin())
             {
-                // Redirect to customer page
+                // Redirect to home page
                 return RedirectToPage("/Index");
             }
             else
@@ -59,10 +70,12 @@ public class LoginModel : PageModel
         {
             OwnerLoginMethods ownerLoginMethods = new OwnerLoginMethods();
             this.users = ownerLoginMethods.LoadUsers();
+
+            // if valid login
             if (this.VerifyLogin())
             {
                 // Redirect to Owner Page (Can Create Employee Accounts)
-                return RedirectToPage("/UserDashboards/OwnerDashboard");
+                return RedirectToPage("/Index");
             }
             else
             {
@@ -77,9 +90,11 @@ public class LoginModel : PageModel
         {
             EmployeeCustomerLoginMethods employeeCustomerLoginMethods = new EmployeeCustomerLoginMethods();
             this.users = employeeCustomerLoginMethods.LoadUsers();
+
+            // If valid login
             if (this.VerifyLogin())
             {
-                // Redirect to Employee Page
+                // Redirect to home Page
                 return RedirectToPage("/Index");
             }
             else

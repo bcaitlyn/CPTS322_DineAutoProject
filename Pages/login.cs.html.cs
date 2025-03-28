@@ -1,3 +1,4 @@
+using DineAuto.Pages.Cart;
 using DineAuto.Pages.LoginMethods;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
@@ -24,6 +25,7 @@ public class LoginModel : PageModel
     public string Message { get; set; }
 
     private Dictionary<string, string> users;
+    private Dictionary<string, CartObj> usersCart;
 
     /// <summary>
     /// Kaden Worked on 3-25-25
@@ -58,9 +60,15 @@ public class LoginModel : PageModel
         {
             CustomerLoginMethods customerLoginMethods = new CustomerLoginMethods();
             this.users = customerLoginMethods.LoadUsers();
+            this.usersCart = customerLoginMethods.LoadUsersCart();
             if (this.VerifyLogin())
             {
                 HttpContext.Session.SetString("UserRole", this.UserRole);
+                if (!this.usersCart.ContainsKey(this.Username))
+                {
+                    this.usersCart.Add(this.Username, new CartObj());
+                    customerLoginMethods.SaveUsersCart(usersCart);
+                }
 
                 // Redirect to home page
                 return RedirectToPage("/Index");

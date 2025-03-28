@@ -19,7 +19,8 @@ namespace DineAuto.Pages.CreateAccounts
         {
             this.FilePath = "Tables/customers.json";
             this.users = this.LoadUsers();
-
+            this.CartFilePath = "Tables/Carts.json";
+            this.usersCart = this.LoadUsersCarts();
         }
 
        

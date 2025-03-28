@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using DineAuto.Pages.Cart;
+using Newtonsoft.Json;
 
 namespace DineAuto.Pages.LoginMethods
 {
@@ -19,6 +20,24 @@ namespace DineAuto.Pages.LoginMethods
             }
             return new Dictionary<string, string>();
 
+        }
+        
+        public  Dictionary<string, CartObj> LoadUsersCart()
+        {
+            this.FilePath = "Tables/carts.json";
+            if (System.IO.File.Exists(FilePath))
+            {
+                string json = System.IO.File.ReadAllText(FilePath);
+                return JsonConvert.DeserializeObject<Dictionary<string, CartObj>>(json) ?? new Dictionary<string, CartObj>();
+            }
+            return new Dictionary<string, CartObj>();
+        }
+
+        public void SaveUsersCart(Dictionary<string, CartObj> usersCart)
+        {
+            this.FilePath = "Tables/carts.json";
+            string json = JsonConvert.SerializeObject(usersCart, Formatting.Indented);
+            System.IO.File.WriteAllText(this.FilePath, json);
         }
     }
 }

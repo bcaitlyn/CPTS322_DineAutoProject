@@ -9,85 +9,85 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DineAuto
 build_property.RootNamespace = DineAuto
-build_property.ProjectDir = /Users/user/Documents/Git Hub/CPTS322_DineAutoProject/
+build_property.ProjectDir = C:\Users\kaden\Desktop\CPTS CLASSES\CPTS322\CPTS322_DineAutoProj\CPTS322_DineAutoProject\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/user/Documents/Git Hub/CPTS322_DineAutoProject
+build_property.MSBuildProjectDirectory = C:\Users\kaden\Desktop\CPTS CLASSES\CPTS322\CPTS322_DineAutoProj\CPTS322_DineAutoProject
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/CreateAccounts/CreateAdminAccount.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3JlYXRlQWNjb3VudHMvQ3JlYXRlQWRtaW5BY2NvdW50LmNzaHRtbA==
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/CreateAccounts/CreateAdminAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQWNjb3VudHNcQ3JlYXRlQWRtaW5BY2NvdW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/CreateAccounts/CreateCustomerAccount.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3JlYXRlQWNjb3VudHMvQ3JlYXRlQ3VzdG9tZXJBY2NvdW50LmNzaHRtbA==
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/CreateAccounts/CreateCustomerAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQWNjb3VudHNcQ3JlYXRlQ3VzdG9tZXJBY2NvdW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/CreateAccounts/CreateEmployeeAccount.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3JlYXRlQWNjb3VudHMvQ3JlYXRlRW1wbG95ZWVBY2NvdW50LmNzaHRtbA==
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/CreateAccounts/CreateEmployeeAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQWNjb3VudHNcQ3JlYXRlRW1wbG95ZWVBY2NvdW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/CreateAccounts/CreateOwnerAccount.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3JlYXRlQWNjb3VudHMvQ3JlYXRlT3duZXJBY2NvdW50LmNzaHRtbA==
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/CreateAccounts/CreateOwnerAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQWNjb3VudHNcQ3JlYXRlT3duZXJBY2NvdW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/CreateAccounts/RegisterRestaurant.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3JlYXRlQWNjb3VudHMvUmVnaXN0ZXJSZXN0YXVyYW50LmNzaHRtbA==
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/CreateAccounts/RegisterRestaurant.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQWNjb3VudHNcUmVnaXN0ZXJSZXN0YXVyYW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvbG9naW4uY3NodG1s
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcbG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/LoginMethods/RestaurantLogin.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW5NZXRob2RzL1Jlc3RhdXJhbnRMb2dpbi5jc2h0bWw=
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/LoginMethods/RestaurantLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5NZXRob2RzXFJlc3RhdXJhbnRMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/UserDashboards/AdminDashboard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXNlckRhc2hib2FyZHMvQWRtaW5EYXNoYm9hcmQuY3NodG1s
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/UserDashboards/AdminDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckRhc2hib2FyZHNcQWRtaW5EYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/UserDashboards/CustomerDashboard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXNlckRhc2hib2FyZHMvQ3VzdG9tZXJEYXNoYm9hcmQuY3NodG1s
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/UserDashboards/CustomerDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckRhc2hib2FyZHNcQ3VzdG9tZXJEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/UserDashboards/EmployeeDashboard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXNlckRhc2hib2FyZHMvRW1wbG95ZWVEYXNoYm9hcmQuY3NodG1s
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/UserDashboards/EmployeeDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckRhc2hib2FyZHNcRW1wbG95ZWVEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/UserDashboards/OwnerDashboard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXNlckRhc2hib2FyZHMvT3duZXJEYXNoYm9hcmQuY3NodG1s
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/UserDashboards/OwnerDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckRhc2hib2FyZHNcT3duZXJEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/UserDashboards/RestaurantDashboard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXNlckRhc2hib2FyZHMvUmVzdGF1cmFudERhc2hib2FyZC5jc2h0bWw=
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/UserDashboards/RestaurantDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckRhc2hib2FyZHNcUmVzdGF1cmFudERhc2hib2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/user/Documents/Git Hub/CPTS322_DineAutoProject/Pages/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-8komf8b205
+[C:/Users/kaden/Desktop/CPTS CLASSES/CPTS322/CPTS322_DineAutoProj/CPTS322_DineAutoProject/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-1nihbcv0v4

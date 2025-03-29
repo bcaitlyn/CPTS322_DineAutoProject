@@ -20,8 +20,6 @@ namespace DineAuto.Pages.CreateAccounts
         {
             this.FilePath = "Tables/customers.json";
             this.users = this.LoadUsers();
-            CartMethods cartMethods = new CartMethods();
-            cartMethods.AddUserCart(this.Username);
             
         }
 

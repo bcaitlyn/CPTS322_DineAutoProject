@@ -5,14 +5,13 @@
     /// </summary>
     public class Item
     {
-        // uint is unsigned it, meaning non negative int
-        public uint ItemID { get; private set; }
+        public Guid ItemID { get; private set; }
         public string ItemName { get; private set; }
-        public uint ItemPrice { get; private set; }
+        public int ItemPrice { get; private set; }
 
-        public Item(uint itemID, string itemName, uint itemPrice)
+        public Item(string itemName, int itemPrice, Guid? itemID = null)
         {
-            this.ItemID = itemID;
+            this.ItemID = itemID ?? Guid.NewGuid();
             this.ItemName = itemName;
             this.ItemPrice = itemPrice;
         }

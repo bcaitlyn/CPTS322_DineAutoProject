@@ -61,6 +61,7 @@ namespace DineAuto.Pages.CreateAccounts
             if (!this.UserExists(Username))
             {
                 this.AddUser(Username, Password);
+                cartMethods.AddUserCart(this.Username);
                 this.Message = "Account successfully created";
             }
             else

@@ -71,6 +71,7 @@ public class LoginModel : PageModel
                     this.usersCart.Add(this.Username, new CartObj());
                     cartMethods.AddUserCart(this.Username);
                 }
+
                 // Redirect to home page
                 return RedirectToPage("/Index");
             }

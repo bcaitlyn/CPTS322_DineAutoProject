@@ -62,8 +62,10 @@ public class LoginModel : PageModel
             {
                 HttpContext.Session.SetString("UserRole", this.UserRole);
 
-                // Redirect to home page
-                return RedirectToPage("/Index");
+                // Change by emily on 3/18 redirect to customer dashboard on successful login. 
+                // also save their username in the session for when adding funds.
+                HttpContext.Session.SetString("Username", this.Username);
+                return RedirectToPage("/UserDashboards/CustomerDashboard");
             }
             else
             {

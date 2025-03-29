@@ -22,22 +22,5 @@ namespace DineAuto.Pages.LoginMethods
 
         }
         
-        public  Dictionary<string, CartObj> LoadUsersCart()
-        {
-            this.FilePath = "Tables/carts.json";
-            if (System.IO.File.Exists(FilePath))
-            {
-                string json = System.IO.File.ReadAllText(FilePath);
-                return JsonConvert.DeserializeObject<Dictionary<string, CartObj>>(json) ?? new Dictionary<string, CartObj>();
-            }
-            return new Dictionary<string, CartObj>();
-        }
-
-        public void SaveUsersCart(Dictionary<string, CartObj> usersCart)
-        {
-            this.FilePath = "Tables/carts.json";
-            string json = JsonConvert.SerializeObject(usersCart, Formatting.Indented);
-            System.IO.File.WriteAllText(this.FilePath, json);
-        }
     }
 }

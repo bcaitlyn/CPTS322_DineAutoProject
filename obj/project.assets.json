@@ -88,11 +88,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kaden\\Desktop\\CPTS CLASSES\\CPTS322\\CPTS322_DineAutoProj\\CPTS322_DineAutoProject\\starter project.csproj",
+      "projectUniqueName": "C:\\Users\\kaden\\Desktop\\CPTS 322\\DineAuto\\CPTS322_DineAutoProject\\starter project.csproj",
       "projectName": "starter project",
-      "projectPath": "C:\\Users\\kaden\\Desktop\\CPTS CLASSES\\CPTS322\\CPTS322_DineAutoProj\\CPTS322_DineAutoProject\\starter project.csproj",
+      "projectPath": "C:\\Users\\kaden\\Desktop\\CPTS 322\\DineAuto\\CPTS322_DineAutoProject\\starter project.csproj",
       "packagesPath": "C:\\Users\\kaden\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kaden\\Desktop\\CPTS CLASSES\\CPTS322\\CPTS322_DineAutoProj\\CPTS322_DineAutoProject\\obj\\",
+      "outputPath": "C:\\Users\\kaden\\Desktop\\CPTS 322\\DineAuto\\CPTS322_DineAutoProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

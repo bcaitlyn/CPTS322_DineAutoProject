@@ -59,17 +59,18 @@ public class LoginModel : PageModel
         if(this.UserRole == "Customer")
         {
             CustomerLoginMethods customerLoginMethods = new CustomerLoginMethods();
+            CartMethods cartMethods = new CartMethods();
             this.users = customerLoginMethods.LoadUsers();
-            this.usersCart = customerLoginMethods.LoadUsersCart();
+            this.usersCart = cartMethods.LoadUsersCart();
             if (this.VerifyLogin())
             {
                 HttpContext.Session.SetString("UserRole", this.UserRole);
+                HttpContext.Session.SetString("Username", this.Username);
                 if (!this.usersCart.ContainsKey(this.Username))
                 {
                     this.usersCart.Add(this.Username, new CartObj());
-                    customerLoginMethods.SaveUsersCart(usersCart);
+                    cartMethods.AddUserCart(this.Username);
                 }
-
                 // Redirect to home page
                 return RedirectToPage("/Index");
             }

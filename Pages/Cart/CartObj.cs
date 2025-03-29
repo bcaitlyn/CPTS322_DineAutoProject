@@ -2,12 +2,15 @@
 {
     public class CartObj
     {
-        private List<Item> items;
+        public List<Item> items = new List<Item>();
         private int size; 
         public CartObj() 
         {
             this.size = 0;
-            this.items = new List<Item>();
+        }
+        public void AddItem(Item item)
+        {
+            this.items.Add(item);
         }
     }
 }

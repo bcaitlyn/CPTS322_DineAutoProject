@@ -3,3 +3,14 @@
 @{
 	ViewData["Title"] = "Cart";
 }
+
+<form method="post">
+	<ul>
+		@foreach (var item in Model.userCart.items)
+		{
+			<li>@item.ItemName</li>
+		}
+	</ul>
+</form>
+
+

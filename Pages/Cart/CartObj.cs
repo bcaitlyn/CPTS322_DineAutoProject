@@ -22,9 +22,9 @@
                 }
             }
         }
-        public int GetTotal()
+        public decimal GetTotal()
         {
-            int total = 0;
+            decimal total = 0;
             for(int i = 0; i < this.items.Count; i++)
             {
                 total += this.items[i].ItemPrice;

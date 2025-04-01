@@ -7,10 +7,10 @@
     {
         public Guid ItemID { get; private set; }
         public string ItemName { get; private set; }
-        public int ItemPrice { get; private set; }
+        public decimal ItemPrice { get; private set; }
         public string RestaurantName { get; set; }
 
-        public Item(string itemName, int itemPrice, Guid? itemID = null)
+        public Item(string itemName, decimal itemPrice, Guid? itemID = null)
         {
             this.ItemID = itemID ?? Guid.NewGuid();
             this.ItemName = itemName;

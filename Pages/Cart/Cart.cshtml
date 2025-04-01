@@ -11,7 +11,11 @@
     <ul>
         @foreach (var item in Model.userCart.items)
         {
-            <li>@item.ItemName - $@item.ItemPrice</li>
+            <li class="mb-2">
+                <strong>@item.ItemName</strong> - $@item.ItemPrice
+                <br />
+                <em>Restaurant:</em> @item.RestaurantName
+            </li>
         }
     </ul>
 }
@@ -22,7 +26,7 @@ else
 
 @if (!string.IsNullOrEmpty(Model.Message))
 {
-    <div class="alert alert-info">@Model.Message</div>
+    <div class="alert alert-info mt-3">@Model.Message</div>
 }
 
 <form method="post">

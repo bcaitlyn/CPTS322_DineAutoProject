@@ -18,6 +18,19 @@
     "items": []
   },
   "CustomerOrderTestAccount": {
-    "items": []
+    "items": [
+      {
+        "ItemID": "d280f1ee-6c54-4b01-90e6-d701748f0851",
+        "ItemName": "Milk",
+        "ItemPrice": 3.25,
+        "RestaurantName": "TestRestaurant"
+      },
+      {
+        "ItemID": "a18c23be-9873-45ab-92e8-8fcdf7fdf4ef",
+        "ItemName": "Wheet",
+        "ItemPrice": 2.46,
+        "RestaurantName": "Test1"
+      }
+    ]
   }
 }

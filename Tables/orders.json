@@ -8,17 +8,31 @@
         {
           "ItemID": "d290f1ee-6c54-4b01-90e6-d701748f0851",
           "ItemName": "Rice",
-          "ItemPrice": 3,
+          "ItemPrice": 3.0,
           "RestaurantName": "TestRestaurant"
         },
         {
           "ItemID": "a18c23be-9873-45ab-92e8-8fcdf7fdf4ef",
           "ItemName": "Bread",
-          "ItemPrice": 2,
+          "ItemPrice": 2.0,
           "RestaurantName": "TestRestaurant"
         }
       ],
       "OrderDate": "2025-04-01T14:09:43.568165-07:00"
+    },
+    {
+      "OrderID": "5c8fc265-2518-42a5-91e9-6e4525dee981",
+      "Username": "CustomerOrderTestAccount",
+      "RestaurantName": "TestRestaurant",
+      "OrderedItems": [
+        {
+          "ItemID": "aacbb406-8a3f-4e80-8ffa-c2a10cb89bf4",
+          "ItemName": null,
+          "ItemPrice": 0.0,
+          "RestaurantName": "TestRestaurant"
+        }
+      ],
+      "OrderDate": "2025-04-01T14:24:15.162894-07:00"
     }
   ]
 }

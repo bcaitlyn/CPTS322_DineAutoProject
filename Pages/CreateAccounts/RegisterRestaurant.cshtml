@@ -1,12 +1,14 @@
 @page
 @model DineAuto.Pages.CreateAccounts.RegisterRestaurantModel
 @{
-    ViewData["Title"] = "Register Restaurant";
+    ViewData["Title"] = "Register Restaurant"; // Page title
 }
 
+<!-- Restaurant Registration Form -->
 <div class="container mt-4">
     <h2 class="display-4">Register Restaurant</h2>
 
+    <!-- Display error message if restaurant already exists -->
     @if (!string.IsNullOrEmpty(Model.ErrorMessage))
     {
         <div class="alert alert-danger" role="alert">
@@ -14,6 +16,7 @@
         </div>
     }
 
+    <!-- Form for restaurant name and password -->
     <form method="post" class="w-50">
         <div class="mb-3 text-start">
             <label for="RestaurantName" class="form-label">Restaurant Name</label>

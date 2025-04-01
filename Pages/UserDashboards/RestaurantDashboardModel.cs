@@ -6,29 +6,31 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DineAuto.Pages.UserDashboards
 {
+    // Handles displaying and managing a restaurant's menu
     public class RestaurantDashboardModel : PageModel
     {
         [BindProperty(SupportsGet = true)]
-        public string RestaurantName { get; set; }
+        public string? RestaurantName { get; set; } // Restaurant name from URL
 
         [BindProperty]
-        public string ItemName { get; set; }
+        public string? ItemName { get; set; } // New item name input
 
         [BindProperty]
-        public string Price { get; set; }
+        public string? Price { get; set; } // New item price input
 
         [BindProperty]
-        public string Description { get; set; }
+        public string? Description { get; set; } // New item description input
 
         [BindProperty]
-        public List<string> SelectedItems { get; set; } = new List<string>();
+        public List<string> SelectedItems { get; set; } = new List<string>(); // Selected items for deletion
 
-        public List<MenuItem> MenuItems { get; set; } = new List<MenuItem>();
-        public bool ShowAddItemForm { get; set; }
-        public bool ShowDeleteCheckboxes { get; set; }
+        public List<MenuItem> MenuItems { get; set; } = new List<MenuItem>(); // List of menu items
+        public bool ShowAddItemForm { get; set; } // Show add item form
+        public bool ShowDeleteCheckboxes { get; set; } // Show delete checkboxes
 
-        private readonly string menusDirectoryPath = Path.Combine(Directory.GetCurrentDirectory(), "Tables", "Menus");
+        private readonly string menusDirectoryPath = Path.Combine(Directory.GetCurrentDirectory(), "Tables", "Menus"); // Path to Menus folder
 
+        // Handles GET request
         public void OnGet(string action = "")
         {
             if (string.IsNullOrEmpty(RestaurantName))
@@ -37,6 +39,7 @@ namespace DineAuto.Pages.UserDashboards
                 return;
             }
 
+            // Load menu items from txt file
             string menuFilePath = Path.Combine(menusDirectoryPath, $"{RestaurantName}Menu.txt");
 
             if (System.IO.File.Exists(menuFilePath))
@@ -45,7 +48,7 @@ namespace DineAuto.Pages.UserDashboards
 
                 foreach (var line in lines)
                 {
-                    var parts = line.Split(',', 3);
+                    var parts = line.Split(',', 3); // Split into Name, Price, Description
                     if (parts.Length == 3)
                     {
                         MenuItems.Add(new MenuItem
@@ -58,6 +61,7 @@ namespace DineAuto.Pages.UserDashboards
                 }
             }
 
+            // Determine which action to show
             if (action == "add")
             {
                 ShowAddItemForm = true;
@@ -68,33 +72,36 @@ namespace DineAuto.Pages.UserDashboards
             }
         }
 
+        // Handles POST request
         public IActionResult OnPost()
         {
+            string menuFilePath = Path.Combine(menusDirectoryPath, $"{RestaurantName}Menu.txt");
+
+            // Add new item
             if (!string.IsNullOrEmpty(ItemName) && !string.IsNullOrEmpty(Price) && !string.IsNullOrEmpty(Description))
             {
-                string menuFilePath = Path.Combine(menusDirectoryPath, $"{RestaurantName}Menu.txt");
-
                 if (!Price.StartsWith("$"))
                 {
-                    Price = "$" + Price;
+                    Price = "$" + Price; // Add $ sign if missing
                 }
 
                 string newItemEntry = $"{ItemName},{Price},{Description}";
 
+                // Append item to txt file
                 using (StreamWriter sw = System.IO.File.AppendText(menuFilePath))
                 {
                     sw.WriteLine(newItemEntry);
                 }
             }
+            // Delete selected items
             else if (SelectedItems.Count > 0)
             {
-                string menuFilePath = Path.Combine(menusDirectoryPath, $"{RestaurantName}Menu.txt");
-
                 if (System.IO.File.Exists(menuFilePath))
                 {
                     var lines = System.IO.File.ReadAllLines(menuFilePath);
                     var updatedLines = new List<string>();
 
+                    // Keep lines that are not selected for deletion
                     foreach (var line in lines)
                     {
                         var parts = line.Split(',', 3);
@@ -104,18 +111,21 @@ namespace DineAuto.Pages.UserDashboards
                         }
                     }
 
+                    // Rewrite txt file
                     System.IO.File.WriteAllLines(menuFilePath, updatedLines);
                 }
             }
 
+            // Redirect back to dashboard
             return RedirectToPage("/UserDashboards/RestaurantDashboard", new { restaurantName = RestaurantName });
         }
     }
 
+    // Class to hold menu item details
     public class MenuItem
     {
-        public string Name { get; set; }
-        public string Price { get; set; }
-        public string Description { get; set; }
+        public string? Name { get; set; } // Item name
+        public string? Price { get; set; } // Item price
+        public string? Description { get; set; } // Item description
     }
 }

@@ -7,17 +7,18 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DineAuto.Pages.Login
 {
+    // Handles restaurant login logic
     public class RestaurantLoginModel : PageModel
     {
         [BindProperty]
-        public string? RestaurantName { get; set; }
+        public string? RestaurantName { get; set; } // Restaurant name input
 
         [BindProperty]
-        public string? Password { get; set; }
+        public string? Password { get; set; } // Password input
 
-        public string? ErrorMessage { get; set; } // Holds the error message
+        public string? ErrorMessage { get; set; } // Error message
 
-        private readonly string restaurantFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Tables", "restaurants.json");
+        private readonly string restaurantFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Tables", "restaurants.json"); // Path to restaurants.json
 
         public void OnGet()
         {
@@ -25,6 +26,7 @@ namespace DineAuto.Pages.Login
 
         public IActionResult OnPost()
         {
+            // Input validation
             if (string.IsNullOrEmpty(RestaurantName) || string.IsNullOrEmpty(Password))
             {
                 ErrorMessage = "Both fields are required.";
@@ -33,6 +35,7 @@ namespace DineAuto.Pages.Login
 
             Dictionary<string, string> restaurants;
 
+            // Load existing restaurants
             if (System.IO.File.Exists(restaurantFilePath) && new FileInfo(restaurantFilePath).Length > 0)
             {
                 var jsonData = System.IO.File.ReadAllText(restaurantFilePath);
@@ -44,7 +47,7 @@ namespace DineAuto.Pages.Login
                 return Page();
             }
 
-            // Validate restaurant credentials
+            // Validate login credentials
             if (restaurants.ContainsKey(RestaurantName) && BCrypt.Net.BCrypt.Verify(Password, restaurants[RestaurantName]))
             {
                 return RedirectToPage("/UserDashboards/RestaurantDashboard", new { restaurantName = RestaurantName });

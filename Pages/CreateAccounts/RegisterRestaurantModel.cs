@@ -7,18 +7,19 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DineAuto.Pages.CreateAccounts
 {
+    // Handles logic for registering a new restaurant
     public class RegisterRestaurantModel : PageModel
     {
         [BindProperty]
-        public string? RestaurantName { get; set; }
+        public string? RestaurantName { get; set; } // Restaurant name input
 
         [BindProperty]
-        public string? Password { get; set; }
+        public string? Password { get; set; } // Password input
 
-        public string? ErrorMessage { get; set; } // Holds the error message
+        public string? ErrorMessage { get; set; } // Error message for duplicate restaurant
 
-        private readonly string restaurantFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Tables", "restaurants.json");
-        private readonly string menusDirectoryPath = Path.Combine(Directory.GetCurrentDirectory(), "Tables", "Menus");
+        private readonly string restaurantFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Tables", "restaurants.json"); // Path to restaurants.json
+        private readonly string menusDirectoryPath = Path.Combine(Directory.GetCurrentDirectory(), "Tables", "Menus"); // Path to Menus folder
 
         public void OnGet()
         {
@@ -26,13 +27,14 @@ namespace DineAuto.Pages.CreateAccounts
 
         public IActionResult OnPost()
         {
+            // Input validation
             if (string.IsNullOrEmpty(RestaurantName) || string.IsNullOrEmpty(Password))
             {
                 ModelState.AddModelError("", "Both fields are required.");
                 return Page();
             }
 
-            // Ensure that the Menus directory exists
+            // Create Menus folder if it doesn't exist
             if (!Directory.Exists(menusDirectoryPath))
             {
                 Directory.CreateDirectory(menusDirectoryPath);
@@ -40,6 +42,7 @@ namespace DineAuto.Pages.CreateAccounts
 
             Dictionary<string, string> restaurants;
 
+            // Load existing restaurants from restaurants.json
             if (System.IO.File.Exists(restaurantFilePath) && new FileInfo(restaurantFilePath).Length > 0)
             {
                 var jsonData = System.IO.File.ReadAllText(restaurantFilePath);
@@ -57,17 +60,17 @@ namespace DineAuto.Pages.CreateAccounts
                 return Page();
             }
 
-            // Store hashed password
+            // Store restaurant with hashed password
             restaurants[RestaurantName] = BCrypt.Net.BCrypt.HashPassword(Password);
 
-            // Save updated restaurants.json file
+            // Save updated restaurants.json
             System.IO.File.WriteAllText(restaurantFilePath, JsonSerializer.Serialize(restaurants, new JsonSerializerOptions { WriteIndented = true }));
 
-            // Create an empty menu TXT file for the restaurant
+            // Create empty menu file for new restaurant
             string menuFilePath = Path.Combine(menusDirectoryPath, $"{RestaurantName}Menu.txt");
             if (!System.IO.File.Exists(menuFilePath))
             {
-                System.IO.File.Create(menuFilePath).Dispose(); // Creates an empty file
+                System.IO.File.Create(menuFilePath).Dispose();
             }
 
             return RedirectToPage("/UserDashboards/OwnerDashboard");

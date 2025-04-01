@@ -20,17 +20,14 @@ namespace DineAuto.Pages.Cart
 
         public void OnGet()
         {
-            // Get the logged-in username from session
             string username = HttpContext.Session.GetString("Username");
 
             if (string.IsNullOrEmpty(username))
             {
-                // User is not logged in, redirect to login
                 Response.Redirect("/login");
                 return;
             }
 
-            // Initialize empty cart if it doesn't exist
             if (!allCarts.ContainsKey(username))
             {
                 allCarts[username] = new CartObj();
@@ -49,7 +46,6 @@ namespace DineAuto.Pages.Cart
                 return RedirectToPage("/login");
             }
 
-            // Ensure cart exists
             if (!allCarts.ContainsKey(username))
             {
                 allCarts[username] = new CartObj();
@@ -64,7 +60,6 @@ namespace DineAuto.Pages.Cart
                 return Page();
             }
 
-            // Check if all items are from one restaurant
             var restaurantNames = userCart.items
                 .Select(i => i.RestaurantName)
                 .Distinct()
@@ -76,7 +71,6 @@ namespace DineAuto.Pages.Cart
                 return Page();
             }
 
-            // Create and save order
             var orders = orderMethods.LoadOrders();
             var newOrder = new OrderObj(username, restaurantNames[0], userCart.items);
 
@@ -87,11 +81,30 @@ namespace DineAuto.Pages.Cart
             orders[username].Add(newOrder);
             orderMethods.SaveOrders(orders);
 
-            // Clear cart
             userCart.items.Clear();
             cartMethods.SaveUsersCart(allCarts);
 
             Message = "Order placed successfully!";
+            return Page();
+        }
+
+        public IActionResult OnPostClearCart()
+        {
+            string username = HttpContext.Session.GetString("Username");
+
+            if (string.IsNullOrEmpty(username))
+            {
+                return RedirectToPage("/login");
+            }
+
+            if (allCarts.ContainsKey(username))
+            {
+                userCart = allCarts[username];
+                userCart.items.Clear();
+                cartMethods.SaveUsersCart(allCarts);
+            }
+
+            Message = "Cart has been cleared.";
             return Page();
         }
     }

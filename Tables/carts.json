@@ -15,7 +15,20 @@
     "items": []
   },
   "testuser": {
-    "items": []
+    "items": [
+      {
+        "ItemID": "d270f1ee-6c54-4b01-90e6-d701748f0851",
+        "ItemName": "Rice",
+        "ItemPrice": 3.25,
+        "RestaurantName": "TestRestaurant"
+      },
+      {
+        "ItemID": "a13c23be-9873-45ab-92e8-8fcdf7fdf4ef",
+        "ItemName": "Chilli",
+        "ItemPrice": 2.46,
+        "RestaurantName": "Test1"
+      }
+    ]
   },
   "CustomerOrderTestAccount": {
     "items": [
@@ -29,7 +42,7 @@
         "ItemID": "a18c23be-9873-45ab-92e8-8fcdf7fdf4ef",
         "ItemName": "Wheet",
         "ItemPrice": 2.46,
-        "RestaurantName": "Test1"
+        "RestaurantName": "TestRestaurant"
       }
     ]
   }

@@ -29,6 +29,10 @@ else
     <div class="alert alert-info mt-3">@Model.Message</div>
 }
 
-<form method="post">
+<form method="post" class="d-inline">
     <button type="submit" asp-page-handler="PlaceOrder" class="btn btn-primary">Place Order</button>
+</form>
+
+<form method="post" class="d-inline">
+    <button type="submit" asp-page-handler="ClearCart" class="btn btn-danger">Clear Cart</button>
 </form>

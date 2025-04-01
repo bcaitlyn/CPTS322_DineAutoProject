@@ -14,18 +14,27 @@ namespace DineAuto.Pages.Cart
 
         public CartModel()
         {
+            // Load all carts from file
             this.allCarts = this.cartMethods.LoadUsersCart();
         }
 
         public void OnGet()
         {
-            string username = "testuser"; // Replace with actual logged-in username
+            // Get the logged-in username from session
+            string username = HttpContext.Session.GetString("Username");
 
-            // Initialize cart if it doesn't exist
+            if (string.IsNullOrEmpty(username))
+            {
+                // User is not logged in, redirect to login
+                Response.Redirect("/login");
+                return;
+            }
+
+            // Initialize empty cart if it doesn't exist
             if (!allCarts.ContainsKey(username))
             {
                 allCarts[username] = new CartObj();
-                cartMethods.SaveUsersCart(allCarts); // Optional: persist empty cart
+                cartMethods.SaveUsersCart(allCarts);
             }
 
             userCart = allCarts[username];
@@ -33,7 +42,12 @@ namespace DineAuto.Pages.Cart
 
         public IActionResult OnPostPlaceOrder()
         {
-            string username = "testuser"; // Replace with actual logged-in username
+            string username = HttpContext.Session.GetString("Username");
+
+            if (string.IsNullOrEmpty(username))
+            {
+                return RedirectToPage("/login");
+            }
 
             // Ensure cart exists
             if (!allCarts.ContainsKey(username))

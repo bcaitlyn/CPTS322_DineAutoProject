@@ -18,17 +18,6 @@
     "items": []
   },
   "CustomerOrderTestAccount": {
-    "items": [
-      {
-        "ItemName": "Rice",
-        "ItemPrice": 3,
-        "RestaurantName": "TestRestaurant"
-      },
-      {
-        "ItemName": "Bread",
-        "ItemPrice": 2,
-        "RestaurantName": "TestRestaurant"
-      }
-    ]
+    "items": []
   }
 }

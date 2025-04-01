@@ -1,0 +1,24 @@
+{
+  "CustomerOrderTestAccount": [
+    {
+      "OrderID": "5be1b34b-6725-421c-bb13-dbe048d91be6",
+      "Username": "CustomerOrderTestAccount",
+      "RestaurantName": "TestRestaurant",
+      "OrderedItems": [
+        {
+          "ItemID": "d290f1ee-6c54-4b01-90e6-d701748f0851",
+          "ItemName": "Rice",
+          "ItemPrice": 3,
+          "RestaurantName": "TestRestaurant"
+        },
+        {
+          "ItemID": "a18c23be-9873-45ab-92e8-8fcdf7fdf4ef",
+          "ItemName": "Bread",
+          "ItemPrice": 2,
+          "RestaurantName": "TestRestaurant"
+        }
+      ],
+      "OrderDate": "2025-04-01T14:09:43.568165-07:00"
+    }
+  ]
+}

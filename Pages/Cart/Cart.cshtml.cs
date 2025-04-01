@@ -3,21 +3,31 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DineAuto.Pages.Cart
 {
+    /// <summary>
+    /// Backend logic for Cart.cshtml page.
+    /// Manages user's cart, order placement, and clearing cart.
+    /// </summary>
     public class CartModel : PageModel
     {
-        public CartObj userCart { get; private set; }
-        private Dictionary<string, CartObj> allCarts;
-        private CartMethods cartMethods = new CartMethods();
-        private OrderMethods orderMethods = new OrderMethods();
+        public CartObj userCart { get; private set; } // Current user's cart
+        private Dictionary<string, CartObj> allCarts; // All user carts
+        private CartMethods cartMethods = new CartMethods(); // Cart helper methods
+        private OrderMethods orderMethods = new OrderMethods(); // Order helper methods
 
-        public string Message { get; private set; }
+        public string Message { get; private set; } // Message displayed to user
 
+        /// <summary>
+        /// Constructor: Loads all carts from carts.json
+        /// </summary>
         public CartModel()
         {
-            // Load all carts from file
             this.allCarts = this.cartMethods.LoadUsersCart();
         }
 
+        /// <summary>
+        /// Handles GET request to load cart data.
+        /// Redirects to login if user not logged in.
+        /// </summary>
         public void OnGet()
         {
             string username = HttpContext.Session.GetString("Username");
@@ -37,6 +47,10 @@ namespace DineAuto.Pages.Cart
             userCart = allCarts[username];
         }
 
+        /// <summary>
+        /// Places an order for the contents of the cart.
+        /// Validates cart contents and creates order.
+        /// </summary>
         public IActionResult OnPostPlaceOrder()
         {
             string username = HttpContext.Session.GetString("Username");
@@ -60,6 +74,7 @@ namespace DineAuto.Pages.Cart
                 return Page();
             }
 
+            // Ensure all items are from one restaurant
             var restaurantNames = userCart.items
                 .Select(i => i.RestaurantName)
                 .Distinct()
@@ -71,6 +86,7 @@ namespace DineAuto.Pages.Cart
                 return Page();
             }
 
+            // Create order
             var orders = orderMethods.LoadOrders();
             var newOrder = new OrderObj(username, restaurantNames[0], userCart.items);
 
@@ -81,6 +97,7 @@ namespace DineAuto.Pages.Cart
             orders[username].Add(newOrder);
             orderMethods.SaveOrders(orders);
 
+            // Clear cart after placing order
             userCart.items.Clear();
             cartMethods.SaveUsersCart(allCarts);
 
@@ -88,6 +105,9 @@ namespace DineAuto.Pages.Cart
             return Page();
         }
 
+        /// <summary>
+        /// Clears the contents of the user's cart.
+        /// </summary>
         public IActionResult OnPostClearCart()
         {
             string username = HttpContext.Session.GetString("Username");

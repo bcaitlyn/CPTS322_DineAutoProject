@@ -4,6 +4,15 @@
     ViewData["Title"] = "Cart";
 }
 
+<!--
+    Cart.cshtml
+    This Razor page displays the contents of the logged-in user's cart.
+    It shows item name, price, and restaurant name.
+    It also provides two buttons:
+    1. Place Order → Converts cart items into an order.
+    2. Clear Cart → Removes all items from the cart.
+-->
+
 <h2>Your Cart</h2>
 
 @if (Model.userCart != null && Model.userCart.items != null && Model.userCart.items.Count > 0)

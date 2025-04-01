@@ -6,6 +6,7 @@ using System.IO;
 using Newtonsoft.Json;
 using BCrypt.Net;
 using DineAuto.Pages.CreateAccounts;
+using DineAuto.Pages.Cart;
 
 namespace DineAuto.Pages.CreateAccounts
 {
@@ -19,7 +20,7 @@ namespace DineAuto.Pages.CreateAccounts
         {
             this.FilePath = "Tables/customers.json";
             this.users = this.LoadUsers();
-
+            
         }
 
        

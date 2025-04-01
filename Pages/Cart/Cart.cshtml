@@ -1,0 +1,47 @@
+﻿@page
+@model DineAuto.Pages.Cart.CartModel
+@{
+	ViewData["Title"] = "Cart";
+}
+
+
+<style>
+	.box {
+		width: 250px;
+		height: 80px;
+		background-color: white;
+		color: black;
+		text-align: left;
+		line-height: 150px; /* Centers text vertically */
+		border-radius: 10px;
+	}
+
+	form {
+		display: inline;
+	}
+</style>
+
+<ul>
+	@foreach (var item in Model.userCart.items)
+	{
+		Console.WriteLine($"ItemName: {item.ItemName}, ItemID: {item.ItemID}");
+		<div class="box">
+			<span>@item.ItemName - $@item.ItemPrice </span>
+			<form method="post">
+				<span><button type="submit" class="btn btn-danger" asp-page-handler="Remove" asp-route-id="@item.ItemID">Delete</button></span>
+			</form>
+		</div>
+	}
+</ul>
+@if (!(Model.userCart.GetTotal() == 0))
+{
+	<h3>Total: $@Model.userCart.GetTotal()</h3>
+	<button type="submit" class="btn btn-primary">Proceed To Payment</button>
+}
+else
+{
+	<h1>Your cart is currently empty</h1>
+}
+
+
+

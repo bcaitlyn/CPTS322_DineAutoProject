@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using DineAuto.Pages.Cart;
+using Newtonsoft.Json;
 
 namespace DineAuto.Pages.LoginMethods
 {
@@ -20,5 +21,6 @@ namespace DineAuto.Pages.LoginMethods
             return new Dictionary<string, string>();
 
         }
+        
     }
 }

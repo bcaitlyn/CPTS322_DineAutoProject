@@ -4,7 +4,7 @@
     ViewData["Title"] = "Home page";
 }
 
-@if(HttpContext.Session.GetString("UserRole") == null)
+@if (HttpContext.Session.GetString("UserRole") == null || HttpContext.Session.GetString("UserRole") == "Customer")
 {
     <div class="text-center">
         <h2 class="display-1">Welcome to DineAuto</h2>

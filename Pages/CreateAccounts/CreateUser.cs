@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DineAuto.Pages.Cart;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
 
@@ -17,7 +18,9 @@ namespace DineAuto.Pages.CreateAccounts
         public string Message { get; set; }
 
         internal string FilePath = string.Empty;
+        internal string CartFilePath = string.Empty;
         internal Dictionary<string, string> users;
+        internal Dictionary<string, CartObj> usersCart;
         [BindProperty]
         public string UserRole { get; }
 
@@ -37,6 +40,7 @@ namespace DineAuto.Pages.CreateAccounts
             return new Dictionary<string, string>();
         }
 
+       
         public void AddUser(string username, string pw)
         {
             if (!users.ContainsKey(username))
@@ -53,9 +57,11 @@ namespace DineAuto.Pages.CreateAccounts
 
         public void OnPost()
         {
+            CartMethods cartMethods = new CartMethods();
             if (!this.UserExists(Username))
             {
                 this.AddUser(Username, Password);
+                cartMethods.AddUserCart(this.Username);
                 this.Message = "Account successfully created";
             }
             else

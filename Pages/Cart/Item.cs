@@ -8,6 +8,7 @@
         public Guid ItemID { get; private set; }
         public string ItemName { get; private set; }
         public int ItemPrice { get; private set; }
+        public string RestaurantName { get; set; }
 
         public Item(string itemName, int itemPrice, Guid? itemID = null)
         {

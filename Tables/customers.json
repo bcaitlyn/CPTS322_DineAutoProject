@@ -4,5 +4,6 @@
   "AnotherTest": "$2a$10$GDveG97/h7k50dbNk73ZMu7EThNXtW99WDuVkj9Lybz.UFBnvnmWu",
   "CustomerAccountTest": "$2a$10$OdRnL1qmynGKGAChCb8ElOKOXt/VYXUt1In2akMVTeQBi0XUYtcx2",
   "testingcart": "$2a$10$MrNqo86Lh6vgJshSUKRwk.KhFXyxPqGRCyeVhX2WjuWRpF6NUnvAm",
-  "test": "$2a$10$MgMwTmEkd4HunApNr03Myu5kAxkcnBuyEtJBQOsKKIUFdPFAxOygC"
+  "test": "$2a$10$MgMwTmEkd4HunApNr03Myu5kAxkcnBuyEtJBQOsKKIUFdPFAxOygC",
+  "CustomerOrderTestAccount": "$2a$10$QXkXvpuJKLwVWHTxS7DXjOrc7OWnIUZpqIIEvwkPMiAzeLM5S1L96"
 }

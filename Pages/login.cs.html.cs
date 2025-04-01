@@ -14,18 +14,18 @@ public class LoginModel : PageModel
 {
     // Bind property tags signify any sort of data that is gathered from html files. So if a user types in a username, the bind property binds that value and stores it in the data member.
     [BindProperty]
-    public string UserRole { get; set; }
+    public string? UserRole { get; set; }
 
     [BindProperty]
-    public string Username { get; set; }
+    public string? Username { get; set; }
 
     [BindProperty]
-    public string Password { get; set; }
+    public string? Password { get; set; }
 
-    public string Message { get; set; }
+    public string? Message { get; set; }
 
-    private Dictionary<string, string> users;
-    private Dictionary<string, CartObj> usersCart;
+    private Dictionary<string, string>? users;
+    private Dictionary<string, CartObj>? usersCart;
 
     /// <summary>
     /// Kaden Worked on 3-25-25
@@ -65,11 +65,12 @@ public class LoginModel : PageModel
             if (this.VerifyLogin())
             {
                 HttpContext.Session.SetString("UserRole", this.UserRole);
-                HttpContext.Session.SetString("Username", this.Username);
-                if (!this.usersCart.ContainsKey(this.Username))
+                HttpContext.Session.SetString("Username", this.Username!);
+                if (!this.usersCart.ContainsKey(this.Username!))
                 {
-                    this.usersCart.Add(this.Username, new CartObj());
-                    cartMethods.AddUserCart(this.Username);
+                    this.usersCart.Add(this.Username!, new CartObj());
+                    cartMethods.AddUserCart(this.Username!);
+                    cartMethods.SaveUsersCart(this.usersCart);
                 }
 
                 // Redirect to home page
@@ -136,7 +137,7 @@ public class LoginModel : PageModel
     public bool VerifyLogin()
     {
         // If our users dictionary doesnt contain the username return false.
-        if (!(this.users.ContainsKey(this.Username)))
+        if (!(this.users!.ContainsKey(this.Username!)))
         {
             
             return false;
@@ -145,7 +146,7 @@ public class LoginModel : PageModel
         else
         {
             // Since the useranme exists, check if the password matches our database.
-            if (BCrypt.Net.BCrypt.Verify(this.Password, this.users[this.Username]))
+            if (BCrypt.Net.BCrypt.Verify(this.Password, this.users[this.Username!]))
             {
                 return true;
             }

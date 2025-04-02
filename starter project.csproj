@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="BCrypt.Net" Version="0.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.3" />
   </ItemGroup>
 
 </Project>

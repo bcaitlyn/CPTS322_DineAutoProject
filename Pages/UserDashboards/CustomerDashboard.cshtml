@@ -1,5 +1,22 @@
 ﻿@page
-@model DineAuto.Pages.UserDashboards.CustomerDashboardModel
+@model CustomerDashboardModel
 @{
-	ViewData["Title"] = "Customer Dashboard";
+    ViewData["Title"] = "Customer Dashboard";
 }
+
+<div class="text-center">
+    <h3 class="display-1">Customer Dashboard</h3>
+    <h4 class="display-6">Balance: $@Model.getBalance()</h4>
+</div>
+
+<div>
+    <!-- Button to open form -->
+    <button class="btn btn-primary" onclick="document.getElementById('fundsForm').style.display='block'">Add Funds</button>
+</div>
+
+<!-- this pops up when user clicks on Add Funds button (onclick()) -->
+<form method="post" asp-page-handler="AddFunds" id="fundsForm" style="display: none;">
+    <label>Enter Amount:</label>
+    <input type="number" name="Amount" min="1" required>
+    <button type="submit" class="btn btn-primary">Confirm</button>
+</form>

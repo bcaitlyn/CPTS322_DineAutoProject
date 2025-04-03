@@ -1,4 +1,10 @@
 {
-  "TestRestaurant": "$2a$10$mvw6BXIpeMU81XdzRPf8E.AIck7yAHY/rMPd65eGWUkA9dLj4f7C6",
-  "Test1": "$2a$10$KdeHp1kWNWN1nzxg7kVkj.wgJJtDag1h28sbW9yAmF5sIq4hkGhyG"
+  "NewTest": {
+    "RestaurantName": "NewTest",
+    "OwnerUsername": "OwnerAccountTest"
+  },
+  "Test1": {
+    "RestaurantName": "Test1",
+    "OwnerUsername": "OwnerAccountTest"
+  }
 }

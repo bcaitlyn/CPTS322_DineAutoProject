@@ -83,28 +83,26 @@ public class LoginModel : PageModel
 
             }
         }
-        if(this.UserRole == "Owner")
+        if (this.UserRole == "Owner")
         {
             OwnerLoginMethods ownerLoginMethods = new OwnerLoginMethods();
             this.users = ownerLoginMethods.LoadUsers();
 
-            // if valid login
             if (this.VerifyLogin())
             {
                 HttpContext.Session.SetString("UserRole", this.UserRole);
+                HttpContext.Session.SetString("Username", this.Username!);
+                HttpContext.Session.SetString("Role", "Owner");
 
-                // Redirect to Owner Page (Can Create Employee Accounts)
-                return RedirectToPage("/Index");
+                // Redirect to Owner Dashboard
+                return RedirectToPage("/UserDashboards/OwnerDashboard");
             }
             else
             {
                 this.Message = "Username or Password was Incorrect, Please Try Again!";
                 return Page();
-
             }
-            
         }
-
         if(this.UserRole == "Employee")
         {
             EmployeeCustomerLoginMethods employeeCustomerLoginMethods = new EmployeeCustomerLoginMethods();

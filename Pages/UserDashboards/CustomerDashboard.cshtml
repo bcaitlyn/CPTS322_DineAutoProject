@@ -1,11 +1,11 @@
 ﻿@page
-@model CustomerDashboardModel
+@model DineAuto.Pages.UserDashboards.CustomerDashboard.CustomerDashboardModel
 @{
     ViewData["Title"] = "Customer Dashboard";
 }
 
 <div class="text-center">
-    <h3 class="display-1">Customer Dashboard</h3>
+    <h3 class="display-1">My Funds</h3>
     <h4 class="display-6">Balance: $@Model.getBalance()</h4>
 </div>
 
@@ -14,9 +14,16 @@
     <button class="btn btn-primary" onclick="document.getElementById('fundsForm').style.display='block'">Add Funds</button>
 </div>
 
-<!-- this pops up when user clicks on Add Funds button (onclick()) -->
-<form method="post" asp-page-handler="AddFunds" id="fundsForm" style="display: none;">
+<!-- This form pops up when user clicks on Add Funds button -->
+<form method="post" id="fundsForm" style="display: none;">
     <label>Enter Amount:</label>
-    <input type="number" name="Amount" min="1" required>
-    <button type="submit" class="btn btn-primary">Confirm</button>
+    <input type="number" asp-for="Amount" min="1" required>
+    <button type="submit" asp-page-handler="AddFunds" class="btn btn-primary">Confirm</button>
 </form>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Message"]
+    </div>
+}

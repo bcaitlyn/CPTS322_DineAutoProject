@@ -1,5 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
+using System.Collections.Generic;
+using System.Text.Json;
+using DineAuto.Pages.Cart;
+using DineAuto.Pages.UserDashboards.CustomerDashboard;
 
 namespace DineAuto.Pages.Cart
 {
@@ -97,10 +102,19 @@ namespace DineAuto.Pages.Cart
             orders[username].Add(newOrder);
             orderMethods.SaveOrders(orders);
 
+            // emily 04/02: payment processing
+            decimal orderTotal = userCart.GetTotal();
+            CustomerDashboardModel userFunds = new CustomerDashboardModel();
+            if (userFunds.getBalance(username) - orderTotal >= 0)
+            {
+                // can proceed
+                Console.WriteLine("order total: ", orderTotal);
+                userFunds.modifyFunds(username, orderTotal * -1);
+            }
+
             // Clear cart after placing order
             userCart.items.Clear();
             cartMethods.SaveUsersCart(allCarts);
-
             Message = "Order placed successfully!";
             return Page();
         }

@@ -4,7 +4,7 @@ using System.IO;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using DineAuto.Pages.Restaurant; // Import RestaurantModel class
+using DineAuto.Pages.RestaurantModels;
 
 namespace DineAuto.Pages.CreateAccounts
 {

@@ -6,11 +6,30 @@
 
 <div class="text-center">
     <h2 class="display-1">Owner Dashboard</h2>
+
     <p class="text-center">
         <a class="nav-link d-inline font-weight-bold text-dark" asp-area="" asp-page="/CreateAccounts/CreateEmployeeAccount">Create Employee Account</a>
         <span class="mx-2"></span>
         <a class="nav-link d-inline font-weight-bold text-dark" asp-area="" asp-page="/CreateAccounts/RegisterRestaurant">Register New Restaurant</a>
-        <span class="mx-2"></span>
-        <a class="nav-link d-inline font-weight-bold text-dark" asp-area="" asp-page="/LoginMethods/RestaurantLogin">Restaurant Log In</a>
     </p>
+
+    <h3 class="mt-4">Your Restaurants</h3>
+
+    @if (Model.OwnedRestaurants != null && Model.OwnedRestaurants.Count > 0)
+    {
+        <ul class="list-group w-50 mx-auto mt-3">
+            @foreach (var restaurant in Model.OwnedRestaurants)
+            {
+                <li class="list-group-item">
+                    <a asp-page="/UserDashboards/RestaurantDashboard" asp-route-restaurantName="@restaurant">
+                        @restaurant
+                    </a>
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>You have not registered any restaurants yet.</p>
+    }
 </div>

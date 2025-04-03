@@ -1,6 +1,6 @@
 using System;
 
-namespace DineAuto.Pages.Restaurant
+namespace DineAuto.Pages.RestaurantModels
 {
     /// <summary>
     /// Represents a restaurant with its name and owner.

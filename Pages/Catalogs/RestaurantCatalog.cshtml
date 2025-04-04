@@ -1,0 +1,48 @@
+@page
+@model DineAuto.Pages.Catalogs.RestaurantCatalogModel
+@{
+    ViewData["Title"] = "Restaurant Catalog";
+}
+
+@* Page: Restaurant Catalog
+   Description: Displays all the restaurants currently stored in the restaurantCatalog.json file.
+    Programmer: Caitlyn Boyd
+    Last Modified: 4/3/25
+*@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Catalog</title>
+</head>
+<body>
+    <h1>Restaurant Catalog</h1>
+
+    @foreach (var city in Model.Restaurants)
+    {
+        foreach (var restaurant in city.Value)
+        {
+    <div class="restaurant">
+        <h2>@restaurant.Name</h2>
+        <p><strong>Cuisine:</strong> @restaurant.Cuisine</p>
+        <p><strong>Location:</strong> @restaurant.Location</p>
+
+        <h3>Menu</h3>
+        <ul>
+            @foreach (var menuItem in restaurant.Menu)
+                    {
+            <li>
+                <strong>@menuItem.ItemName</strong> - $@menuItem.ItemPrice
+                <!-- Kaden: Add to Cart Button for Show Here-->
+                <button class="add-to-cart-button" onclick="alert('Added to cart: @menuItem.ItemName')">
+                    Add to Cart
+                </button>
+            </li>
+                    }
+        </ul>
+    </div>
+        }
+    }
+</body>
+</html>

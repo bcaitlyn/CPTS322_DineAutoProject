@@ -1,0 +1,83 @@
+{
+  "Seattle": [
+    {
+      "Name": "Pike Place Grill",
+      "Cuisine": "Seafood",
+      "Location": "Seattle, WA",
+      "Menu": [
+        {
+          "ItemName": "Grilled Salmon",
+          "ItemPrice": 22.99
+        },
+        {
+          "ItemName": "Clam Chowder",
+          "ItemPrice": 8.99
+        }
+      ]
+    },
+    {
+      "Name": "Rainy Day Noodles",
+      "Cuisine": "Asian Fusion",
+      "Location": "Seattle, WA",
+      "Menu": [
+        {
+          "ItemName": "Ramen Bowl",
+          "ItemPrice": 12.99
+        },
+        {
+          "ItemName": "Banh Mi",
+          "ItemPrice": 9.99
+        }
+      ]
+    }
+  ],
+  "Spokane": [
+    {
+      "Name": "Lilac Bistro",
+      "Cuisine": "American",
+      "Location": "Spokane, WA",
+      "Menu": [
+        {
+          "ItemName": "Steak Frites",
+          "ItemPrice": 19.99
+        },
+        {
+          "ItemName": "Caesar Salad",
+          "ItemPrice": 7.99
+        }
+      ]
+    }
+  ],
+  "Pullman": [
+    {
+      "Name": "Cougar Cafe",
+      "Cuisine": "Breakfast & Brunch",
+      "Location": "Pullman, WA",
+      "Menu": [
+        {
+          "ItemName": "Eggs Benedict",
+          "ItemPrice": 10.99
+        },
+        {
+          "ItemName": "Pancake Stack",
+          "ItemPrice": 8.49
+        }
+      ]
+    },
+    {
+      "Name": "Wazzu Wings",
+      "Cuisine": "American",
+      "Location": "Pullman, WA",
+      "Menu": [
+        {
+          "ItemName": "Buffalo Wings",
+          "ItemPrice": 11.99
+        },
+        {
+          "ItemName": "Garlic Parmesan Fries",
+          "ItemPrice": 6.99
+        }
+      ]
+    }
+  ]
+}

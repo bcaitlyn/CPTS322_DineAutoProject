@@ -103,20 +103,34 @@ namespace DineAuto.Pages.Cart
             orderMethods.SaveOrders(orders);
 
             // emily 04/02: payment processing
+            // yevin 04/05: bug fix: order placed with $0 in account
             decimal orderTotal = userCart.GetTotal();
             CustomerDashboardModel userFunds = new CustomerDashboardModel();
-            if (userFunds.getBalance(username) > 0 && userFunds.getBalance(username) - orderTotal >= 0)
+
+            if (userFunds.getBalance(username) < orderTotal)
             {
-                // can proceed
-                Console.WriteLine("order total: ", orderTotal);
-                userFunds.modifyFunds(username, orderTotal * -1);
+                Message = "Insufficient funds. Please add money to your account.";
+                return Page();
             }
 
-            // Clear cart after placing order
+            // Funds are sufficient → proceed
+            userFunds.modifyFunds(username, orderTotal * -1);
+
+            // Save order
+            if (!orders.ContainsKey(username))
+            {
+                orders[username] = new List<OrderObj>();
+            }
+            orders[username].Add(newOrder);
+            orderMethods.SaveOrders(orders);
+
+            // Clear cart
             userCart.items.Clear();
             cartMethods.SaveUsersCart(allCarts);
+
             Message = "Order placed successfully!";
             return Page();
+
         }
 
         /// <summary>

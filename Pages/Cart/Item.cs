@@ -10,12 +10,14 @@
         public decimal ItemPrice { get; private set; }
         public string RestaurantName { get; set; }
 
+
         
-        public Item(string itemName, decimal itemPrice, Guid? itemID = null)
+        public Item(string itemName, decimal itemPrice, string restaurantName, Guid? itemID = null)
         {
             this.ItemID = itemID ?? Guid.NewGuid();
             this.ItemName = itemName;
             this.ItemPrice = itemPrice;
+            this.RestaurantName = restaurantName;
         }
         
     }

@@ -35,9 +35,12 @@
             <li>
                 <strong>@menuItem.ItemName</strong> - $@menuItem.ItemPrice
                 <!-- Kaden: Add to Cart Button for Show Here-->
-                <button class="add-to-cart-button" onclick="alert('Added to cart: @menuItem.ItemName')">
-                    Add to Cart
-                </button>
+                <form method="post">
+                    <input type="hidden" name="ItemName" value="@menuItem.ItemName" />
+                    <input type="hidden" name="ItemPrice" value="@menuItem.ItemPrice" />
+                    <input type="hidden" name="RestaurantName" value="@restaurant.Name" />
+                    <button type="submit" asp-page-handler="AddItem">Add Item to Cart</button>
+                </form>
             </li>
                     }
         </ul>

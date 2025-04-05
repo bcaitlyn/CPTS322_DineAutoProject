@@ -1,0 +1,3 @@
+Rice,$1.45,White Rice
+Sugar,$3.45,Brown Sugar
+Log Name Item Test dfgh sdf rty dfgh,$1.56,Long Description Test : 123gdsfghdfgh 345 fghjs sdfg

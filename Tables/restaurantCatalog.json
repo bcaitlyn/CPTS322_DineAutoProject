@@ -51,7 +51,7 @@
   "Pullman": [
     {
       "Name": "Cougar Cafe",
-      "Cuisine": "Breakfast & Brunch",
+      "Cuisine": "Breakfast \u0026 Brunch",
       "Location": "Pullman, WA",
       "Menu": [
         {
@@ -78,6 +78,20 @@
           "ItemPrice": 6.99
         }
       ]
+    }
+  ],
+  "Tacoma": [
+    {
+      "Name": "Pike Place Grill",
+      "Cuisine": "Seafood",
+      "Location": "Tacoma, WA",
+      "Menu": []
+    },
+    {
+      "Name": "Tacoma BBQ",
+      "Cuisine": "BBQ",
+      "Location": "Tacoma, WA",
+      "Menu": []
     }
   ]
 }

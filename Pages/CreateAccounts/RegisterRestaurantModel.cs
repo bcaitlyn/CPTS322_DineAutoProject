@@ -1,79 +1,106 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Text.Json;
+using System.Collections.Generic;
 
-namespace DineAuto.Pages.CreateAccounts
+namespace DineAuto.Pages.RegisterRestaurants
 {
-    // Handles logic for registering a new restaurant
     public class RegisterRestaurantModel : PageModel
     {
         [BindProperty]
-        public string? RestaurantName { get; set; } // Restaurant name input
+        public string RestaurantName { get; set; }
 
         [BindProperty]
-        public string? Password { get; set; } // Password input
+        public string Cuisine { get; set; }
 
-        public string? ErrorMessage { get; set; } // Error message for duplicate restaurant
+        [BindProperty]
+        public string City { get; set; }
 
-        private readonly string restaurantFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Tables", "restaurants.json"); // Path to restaurants.json
-        private readonly string menusDirectoryPath = Path.Combine(Directory.GetCurrentDirectory(), "Tables", "Menus"); // Path to Menus folder
+        [BindProperty]
+        public string State { get; set; }
+
+        public string Message { get; set; }
+
+        public bool IsSuccess {get; set;} // Checks if restaurant was created successfully
+
+        public bool AlreadyExists {get; set;} // Check if restaurant already exists.
+
+        private readonly string catalogPath = "Tables/restaurantCatalog.json";
 
         public void OnGet()
         {
         }
 
-        public IActionResult OnPost()
+        public void OnPost()
         {
-            // Input validation
-            if (string.IsNullOrEmpty(RestaurantName) || string.IsNullOrEmpty(Password))
+            if (string.IsNullOrEmpty(RestaurantName) ||
+                string.IsNullOrEmpty(Cuisine) ||
+                string.IsNullOrEmpty(City) ||
+                string.IsNullOrEmpty(State))
             {
-                ModelState.AddModelError("", "Both fields are required.");
-                return Page();
+                Message = "All fields are required.";
+                IsSuccess = false;
+                return;
             }
 
-            // Create Menus folder if it doesn't exist
-            if (!Directory.Exists(menusDirectoryPath))
-            {
-                Directory.CreateDirectory(menusDirectoryPath);
-            }
+            Dictionary<string, List<RestaurantEntry>> catalog;
+            string formattedLocation = $"{City}, {State}";
 
-            Dictionary<string, string> restaurants;
-
-            // Load existing restaurants from restaurants.json
-            if (System.IO.File.Exists(restaurantFilePath) && new FileInfo(restaurantFilePath).Length > 0)
+            if (System.IO.File.Exists(catalogPath))
             {
-                var jsonData = System.IO.File.ReadAllText(restaurantFilePath);
-                restaurants = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonData) ?? new Dictionary<string, string>();
+                string json = System.IO.File.ReadAllText(catalogPath);
+                catalog = JsonSerializer.Deserialize<Dictionary<string, List<RestaurantEntry>>>(json)
+                          ?? new Dictionary<string, List<RestaurantEntry>>();
             }
             else
             {
-                restaurants = new Dictionary<string, string>();
+                catalog = new Dictionary<string, List<RestaurantEntry>>();
             }
 
-            // Check if restaurant already exists
-            if (restaurants.ContainsKey(RestaurantName))
+            if (!catalog.ContainsKey(City))
             {
-                ErrorMessage = "A restaurant with this name already exists.";
-                return Page();
+
+                catalog[City] = new List<RestaurantEntry>();
             }
-
-            // Store restaurant with hashed password
-            restaurants[RestaurantName] = BCrypt.Net.BCrypt.HashPassword(Password);
-
-            // Save updated restaurants.json
-            System.IO.File.WriteAllText(restaurantFilePath, JsonSerializer.Serialize(restaurants, new JsonSerializerOptions { WriteIndented = true }));
-
-            // Create empty menu file for new restaurant
-            string menuFilePath = Path.Combine(menusDirectoryPath, $"{RestaurantName}Menu.txt");
-            if (!System.IO.File.Exists(menuFilePath))
+            else
             {
-                System.IO.File.Create(menuFilePath).Dispose();
+                AlreadyExists = catalog[City].Any(newRestaurant => string.Equals(newRestaurant.Name, RestaurantName, StringComparison.OrdinalIgnoreCase));
+
+                if (AlreadyExists == true)
+                {
+                    Message = "Restaurant Already Exists";
+                    IsSuccess = false;
+                    return;
+                }
             }
 
-            return RedirectToPage("/UserDashboards/OwnerDashboard");
+            catalog[City].Add(new RestaurantEntry
+            {
+                Name = RestaurantName,
+                Cuisine = Cuisine,
+                Location = formattedLocation,
+                Menu = new List<MenuItem>()
+            });
+
+            string updatedJson = JsonSerializer.Serialize(catalog, new JsonSerializerOptions { WriteIndented = true });
+            System.IO.File.WriteAllText(catalogPath, updatedJson);
+
+            Message = "Restaurant registered successfully!";
+            IsSuccess = true;
+        }
+
+        public class RestaurantEntry
+        {
+            public string Name { get; set; }
+            public string Cuisine { get; set; }
+            public string Location { get; set; }
+            public List<MenuItem> Menu { get; set; }
+        }
+
+        public class MenuItem
+        {
+            public string ItemName { get; set; }
+            public double ItemPrice { get; set; }
         }
     }
 }

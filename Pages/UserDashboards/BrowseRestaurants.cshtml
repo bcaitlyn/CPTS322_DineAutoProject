@@ -1,0 +1,23 @@
+@page
+@model DineAuto.Pages.UserDashboards.BrowseRestaurantsModel
+@{
+    ViewData["Title"] = "Browse Restaurants";
+}
+
+<h2>Browse Restaurants</h2>
+
+@if (Model.RestaurantNames.Count == 0)
+{
+    <p>No restaurants available.</p>
+}
+else
+{
+    <ul>
+        @foreach (var name in Model.RestaurantNames)
+        {
+            <li>
+                <a asp-page="/UserDashboards/RestaurantMenu" asp-route-Restaurant="@name">@name</a>
+            </li>
+        }
+    </ul>
+}

@@ -74,7 +74,7 @@ public class LoginModel : PageModel
                 }
 
                 // Redirect to home page
-                return RedirectToPage("/Index");
+                return RedirectToPage("/Catalogs/RestaurantCatalog");
             }
             else
             {

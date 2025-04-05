@@ -105,7 +105,7 @@ namespace DineAuto.Pages.Cart
             // emily 04/02: payment processing
             decimal orderTotal = userCart.GetTotal();
             CustomerDashboardModel userFunds = new CustomerDashboardModel();
-            if (userFunds.getBalance(username) - orderTotal >= 0)
+            if (userFunds.getBalance(username) > 0 && userFunds.getBalance(username) - orderTotal >= 0)
             {
                 // can proceed
                 Console.WriteLine("order total: ", orderTotal);

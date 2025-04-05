@@ -85,13 +85,31 @@
       "Name": "Pike Place Grill",
       "Cuisine": "Seafood",
       "Location": "Tacoma, WA",
-      "Menu": []
+      "Menu": [
+        {
+          "ItemName": "Grill Cheese Burger",
+          "ItemPrice": 9.99
+        },
+        {
+          "ItemName": "Clam Chowder",
+          "ItemPrice": 8.99
+        }
+      ]
     },
     {
       "Name": "Tacoma BBQ",
       "Cuisine": "BBQ",
       "Location": "Tacoma, WA",
-      "Menu": []
+      "Menu": [
+        {
+          "ItemName": "Smoky Grilled Beef",
+          "ItemPrice": 15
+        },
+        {
+          "ItemName": "Chicken on the Grill",
+          "ItemPrice": 12
+        }
+      ]
     }
   ]
 }

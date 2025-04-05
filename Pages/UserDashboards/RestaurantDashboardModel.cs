@@ -51,6 +51,61 @@ namespace DineAuto.Pages.UserDashboards
             return Page();
         }
 
+        public IActionResult OnPostAddItem(string city, string restaurantName, string newItemName, double newItemPrice)
+        {
+            if (string.IsNullOrEmpty(city) || string.IsNullOrEmpty(restaurantName) ||
+                string.IsNullOrEmpty(newItemName) || newItemPrice <= 0)
+            {
+                return RedirectToPage("/Error");
+            }
+
+            string catalogPath = "Tables/restaurantCatalog.json";
+            if (!System.IO.File.Exists(catalogPath)) return RedirectToPage("/Error");
+
+            var json = System.IO.File.ReadAllText(catalogPath);
+            var catalog = JsonSerializer.Deserialize<Dictionary<string, List<RestaurantEntry>>>(json);
+
+            var restaurant = catalog?[city]?.FirstOrDefault(r =>
+                string.Equals(r.Name, restaurantName, StringComparison.OrdinalIgnoreCase));
+
+            if (restaurant == null) return RedirectToPage("/Error");
+
+            restaurant.Menu.Add(new MenuItem
+            {
+                ItemName = newItemName,
+                ItemPrice = newItemPrice
+            });
+
+            string updated = JsonSerializer.Serialize(catalog, new JsonSerializerOptions { WriteIndented = true });
+            System.IO.File.WriteAllText(catalogPath, updated);
+
+            return RedirectToPage(new { city = city, name = restaurantName });
+        }
+
+        public IActionResult OnPostDeleteItems(string city, string restaurantName, List<string> itemsToDelete)
+        {
+            if (string.IsNullOrEmpty(city) || string.IsNullOrEmpty(restaurantName) || itemsToDelete == null)
+                return RedirectToPage(new { city = city, name = restaurantName });
+
+            string catalogPath = "Tables/restaurantCatalog.json";
+            if (!System.IO.File.Exists(catalogPath)) return RedirectToPage("/Error");
+
+            var json = System.IO.File.ReadAllText(catalogPath);
+            var catalog = JsonSerializer.Deserialize<Dictionary<string, List<RestaurantEntry>>>(json);
+
+            var restaurant = catalog?[city]?.FirstOrDefault(r =>
+                string.Equals(r.Name, restaurantName, StringComparison.OrdinalIgnoreCase));
+
+            if (restaurant == null) return RedirectToPage("/Error");
+
+            restaurant.Menu.RemoveAll(item => itemsToDelete.Contains(item.ItemName));
+
+            string updated = JsonSerializer.Serialize(catalog, new JsonSerializerOptions { WriteIndented = true });
+            System.IO.File.WriteAllText(catalogPath, updated);
+
+            return RedirectToPage(new { city = city, name = restaurantName });
+        }
+
         public class RestaurantEntry
         {
             public string Name { get; set; }

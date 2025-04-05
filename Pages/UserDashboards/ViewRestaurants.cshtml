@@ -1,0 +1,26 @@
+@page
+@model DineAuto.Pages.UserDashboards.ViewRestaurantsModel
+@{
+    ViewData["Title"] = "All Restaurants";
+}
+
+<!--- Allows user to view all available restaurants --->
+
+<h2 class="display-4">All Registered Restaurants</h2>
+
+@foreach (var city in Model.Restaurants.Keys)
+{
+    <h4>@city</h4>
+    <ul>
+        @foreach (var restaurant in Model.Restaurants[city])
+        {
+            <li>
+                <a asp-page="/UserDashboards/RestaurantDashboard"
+                   asp-route-city="@city"
+                   asp-route-name="@restaurant.Name">
+                   @restaurant.Name (@restaurant.Cuisine)
+                </a>
+            </li>
+        }
+    </ul>
+}

@@ -133,6 +133,26 @@
         }
       ],
       "OrderDate": "2025-04-05T16:28:27.142117-07:00"
+    },
+    {
+      "OrderID": "eca6afef-e635-4685-83e3-2c11972e5728",
+      "Username": "CustomerOrderTestAccount",
+      "RestaurantName": "Pike Place Grill",
+      "OrderedItems": [
+        {
+          "ItemID": "00000000-0000-0000-0000-000000000000",
+          "ItemName": "Grilled Salmon",
+          "ItemPrice": 22.99,
+          "RestaurantName": "Pike Place Grill"
+        },
+        {
+          "ItemID": "00000000-0000-0000-0000-000000000000",
+          "ItemName": "Clam Chowder",
+          "ItemPrice": 8.99,
+          "RestaurantName": "Pike Place Grill"
+        }
+      ],
+      "OrderDate": "2025-04-05T17:37:34.521537-07:00"
     }
   ],
   "emily": [

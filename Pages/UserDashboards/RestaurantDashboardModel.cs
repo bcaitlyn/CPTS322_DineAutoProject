@@ -65,16 +65,29 @@ namespace DineAuto.Pages.UserDashboards
             var json = System.IO.File.ReadAllText(catalogPath);
             var catalog = JsonSerializer.Deserialize<Dictionary<string, List<RestaurantEntry>>>(json);
 
-            var restaurant = catalog?[city]?.FirstOrDefault(r =>
+            var restaurantList = catalog?[city];
+            if (restaurantList == null) return RedirectToPage("/Error");
+
+            var restaurant = restaurantList.FirstOrDefault(r =>
                 string.Equals(r.Name, restaurantName, StringComparison.OrdinalIgnoreCase));
 
             if (restaurant == null) return RedirectToPage("/Error");
 
+            // Add new item
+            restaurant.Menu ??= new List<MenuItem>();
             restaurant.Menu.Add(new MenuItem
             {
                 ItemName = newItemName,
                 ItemPrice = newItemPrice
             });
+
+            // Replace the original object in the list to preserve all fields (especially OwnerUsername)
+            int index = restaurantList.FindIndex(r => r.Name == restaurant.Name);
+            if (index >= 0)
+            {
+                restaurantList[index] = restaurant;
+            }
+
 
             string updated = JsonSerializer.Serialize(catalog, new JsonSerializerOptions { WriteIndented = true });
             System.IO.File.WriteAllText(catalogPath, updated);
@@ -100,6 +113,14 @@ namespace DineAuto.Pages.UserDashboards
 
             restaurant.Menu.RemoveAll(item => itemsToDelete.Contains(item.ItemName));
 
+            // Preserve updated restaurant back into the list
+            int index = catalog[city].FindIndex(r => r.Name == restaurant.Name);
+            if (index >= 0)
+            {
+                catalog[city][index] = restaurant;
+            }
+
+
             string updated = JsonSerializer.Serialize(catalog, new JsonSerializerOptions { WriteIndented = true });
             System.IO.File.WriteAllText(catalogPath, updated);
 
@@ -112,6 +133,7 @@ namespace DineAuto.Pages.UserDashboards
             public string Cuisine { get; set; }
             public string Location { get; set; }
             public List<MenuItem> Menu { get; set; }
+            public string OwnerUsername { get; set; }
         }
 
         public class MenuItem

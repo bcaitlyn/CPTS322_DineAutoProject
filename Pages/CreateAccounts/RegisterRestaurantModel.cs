@@ -74,11 +74,14 @@ namespace DineAuto.Pages.RegisterRestaurants
                 }
             }
 
+            string ownerUsername = HttpContext.Session.GetString("Username");
+
             catalog[City].Add(new RestaurantEntry
             {
                 Name = RestaurantName,
                 Cuisine = Cuisine,
                 Location = formattedLocation,
+                OwnerUsername = ownerUsername,
                 Menu = new List<MenuItem>()
             });
 
@@ -95,6 +98,7 @@ namespace DineAuto.Pages.RegisterRestaurants
             public string Cuisine { get; set; }
             public string Location { get; set; }
             public List<MenuItem> Menu { get; set; }
+            public string OwnerUsername {get; set;}
         }
 
         public class MenuItem

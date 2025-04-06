@@ -92,6 +92,7 @@ public class LoginModel : PageModel
             if (this.VerifyLogin())
             {
                 HttpContext.Session.SetString("UserRole", this.UserRole);
+                HttpContext.Session.SetString("Username", this.Username!);
 
                 // Redirect to Owner Page (Can Create Employee Accounts)
                 return RedirectToPage("/Index");

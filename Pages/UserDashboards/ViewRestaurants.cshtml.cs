@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Http;
 using System.Text.Json;
 
 namespace DineAuto.Pages.UserDashboards
@@ -9,23 +10,37 @@ namespace DineAuto.Pages.UserDashboards
 
         public void OnGet()
         {
+            string currentOwner = HttpContext.Session.GetString("Username");
+
             string catalogPath = "Tables/restaurantCatalog.json";
+            Dictionary<string, List<RestaurantEntry>> fullCatalog;
+
             if (System.IO.File.Exists(catalogPath))
             {
                 string json = System.IO.File.ReadAllText(catalogPath);
-                Restaurants = JsonSerializer.Deserialize<Dictionary<string, List<RestaurantEntry>>>(json)
+                fullCatalog = JsonSerializer.Deserialize<Dictionary<string, List<RestaurantEntry>>>(json)
                               ?? new Dictionary<string, List<RestaurantEntry>>();
             }
             else
             {
-                Restaurants = new Dictionary<string, List<RestaurantEntry>>();
+                fullCatalog = new Dictionary<string, List<RestaurantEntry>>();
             }
+
+            // Filter to show only restaurants owned by this user
+            Restaurants = fullCatalog
+                .Where(city => city.Value.Any(r => r.OwnerUsername == currentOwner))
+                .ToDictionary(
+                    city => city.Key,
+                    city => city.Value.Where(r => r.OwnerUsername == currentOwner).ToList()
+                );
         }
 
         public class RestaurantEntry
         {
             public string Name { get; set; }
             public string Cuisine { get; set; }
+            public string Location { get; set; }
+            public string OwnerUsername { get; set; }
         }
     }
 }

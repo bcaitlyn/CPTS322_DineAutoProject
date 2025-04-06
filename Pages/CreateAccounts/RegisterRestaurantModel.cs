@@ -1,3 +1,9 @@
+/*
+Register Restaurant Method
+Programmer : Yevin
+Last Worked on : 04/05
+*/
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text.Json;
@@ -33,6 +39,7 @@ namespace DineAuto.Pages.RegisterRestaurants
 
         public void OnPost()
         {
+            // Check if a field is left empty
             if (string.IsNullOrEmpty(RestaurantName) ||
                 string.IsNullOrEmpty(Cuisine) ||
                 string.IsNullOrEmpty(City) ||
@@ -46,6 +53,7 @@ namespace DineAuto.Pages.RegisterRestaurants
             Dictionary<string, List<RestaurantEntry>> catalog;
             string formattedLocation = $"{City}, {State}";
 
+            // Check list of restaurants
             if (System.IO.File.Exists(catalogPath))
             {
                 string json = System.IO.File.ReadAllText(catalogPath);
@@ -57,12 +65,12 @@ namespace DineAuto.Pages.RegisterRestaurants
                 catalog = new Dictionary<string, List<RestaurantEntry>>();
             }
 
-            if (!catalog.ContainsKey(City))
+            if (!catalog.ContainsKey(City)) // Check if city exists
             {
 
                 catalog[City] = new List<RestaurantEntry>();
             }
-            else
+            else // check if restaurants already registered in city
             {
                 AlreadyExists = catalog[City].Any(newRestaurant => string.Equals(newRestaurant.Name, RestaurantName, StringComparison.OrdinalIgnoreCase));
 
@@ -76,6 +84,7 @@ namespace DineAuto.Pages.RegisterRestaurants
 
             string ownerUsername = HttpContext.Session.GetString("Username");
 
+            // Add new restaurant
             catalog[City].Add(new RestaurantEntry
             {
                 Name = RestaurantName,

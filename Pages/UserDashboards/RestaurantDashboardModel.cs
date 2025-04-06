@@ -1,3 +1,9 @@
+/*
+Restaurant Dashboard to view each restaurants items
+Created by : Yevin
+Last Worked on : 04/05
+*/
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;

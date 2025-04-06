@@ -1,3 +1,9 @@
+/*
+Allowes owner to see dashboard of restaurants they have created
+Created by : Yevin
+Last Worked on : 04/05
+*/
+
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Http;
 using System.Text.Json;

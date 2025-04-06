@@ -11,7 +11,7 @@ using DineAuto.Pages.Catalogs;
  * Last Modified: 4/3/25
  */
 
- // yevin 04/05 : Addition of OnwerUsername to store owner that created restaurant
+ // yevin 04/05 : Addition of OwnerUsername to store owner that created restaurant
 namespace DineAuto.Pages.Catalogs
 {
 	public class Restaurant

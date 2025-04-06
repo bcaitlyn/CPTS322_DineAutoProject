@@ -83,6 +83,8 @@ public class LoginModel : PageModel
 
             }
         }
+        // Worked on by : Yevin
+        // Bug fix to store user session of Owner to allow restaurants to be registered and displayed according to owner
         if(this.UserRole == "Owner")
         {
             OwnerLoginMethods ownerLoginMethods = new OwnerLoginMethods();

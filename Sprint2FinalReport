@@ -1,0 +1,44 @@
+Sprint 2 Report
+Video Link: https://youtu.be/wwYIh6YJCJU
+What's New (User Facing)
+Feature 1: Payment modification and payment processing. Customer can add funds to their account, and they can order with the funds in their account
+Feature 2: Order system to allow customers to place orders from the same restaurants out of the cart with validation.
+Feature 3: Cart feature, allows adding menu items to a cart
+Feature 4: Bowse Restaurant Catalog – allows users to browse the restaurants available on DineAuto
+Feature 5: Browse Menu Catalog – allows users to browse the available menu items for a given restaurant.
+Work Summary (Developer Facing)
+Overall our team worked on the commerce aspect of the project, including a UI for browsing and functionality for ordering and paying. We mostly divided up the work based on what we worked on for sprint 1, for example members who worked on owner login for sprint 1 worked on more features for restaurant owners for this sprint. We learned how to manage many branches in github and how to resolve merge conflicts by communicating as a team.
+Unfinished Work
+No unfinished work. Everyone got their assigned feature done.
+Completed Issues/User Stories
+Here are links to the issues that we completed in this sprint:
+
+URL of Browse Restaurants [F008]: https://github.com/bcaitlyn/CPTS322_DineAutoProject/issues/17
+URL of Browse Restuarant Menu [F009]: https://github.com/bcaitlyn/CPTS322_DineAutoProject/issues/18
+URL of Add to Cart [F016]: https://github.com/bcaitlyn/CPTS322_DineAutoProject/issues/32
+URL of Order Menu Item [F010]
+https://github.com/users/bcaitlyn/projects/2/views/1?pane=issue&itemId=102075892&issue=bcaitlyn%7CCPTS322_DineAutoProject%7C19
+Incomplete Issues/User Stories
+Here are links to issues we worked on but did not complete in this sprint:
+
+NO INCOMPLETE ISSUES
+Code Files for Review
+Please review the following code files, which were actively developed during this sprint, for quality:
+
+Overall Project Repository: https://github.com/bcaitlyn/CPTS322_DineAutoProject
+Retrospective Summary
+Here's what went well:
+
+This sprint we made sure to plan out our work early. We assigned each member their own feature to complete.
+Communication was consistent.
+Improved documentation within code.
+
+Here's what we'd like to improve:
+
+Communicating implementation details better
+
+Here are changes we plan to implement in the next sprint:
+
+Refining old features.
+Adding restaurant reviews.
+Implementing non-functional requirements.

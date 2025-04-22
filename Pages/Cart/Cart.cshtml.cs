@@ -155,5 +155,10 @@ namespace DineAuto.Pages.Cart
             Message = "Cart has been cleared.";
             return Page();
         }
+
+        public IActionResult OnPostOrderHistory()
+        {
+            return RedirectToPage("/OrderHistory/OrderHistory");
+        }
     }
 }

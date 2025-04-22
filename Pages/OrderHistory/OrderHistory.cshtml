@@ -1,0 +1,26 @@
+﻿@page
+@model DineAuto.Pages.OrderHistory.OrderHistoryModel
+@{
+    ViewData["Title"] = "Order History";
+}
+
+@if(Model.curUserOrderHistory.Count > 0)
+{
+    foreach(var order in Model.curUserOrderHistory)
+    {
+        <div class="order-card mb-3 p-3 border rounded shadow-sm">
+            <h5 class="mb-1">@order.RestaurantName</h5>
+        </div>
+        foreach(var item in order.OrderedItems)
+        {
+            <p class="mb-0"><strong>Item:</strong>@item.ItemName</p>
+            <p class="mb-0"><strong>Price:</strong> $@item.ItemPrice.ToString("0.00")</p>
+        }
+        <p class="mb-0"><strong>Amount Paid:</strong>$@order.GetTotal().ToString("0.00")</p>
+    }
+   
+}
+else
+{
+    
+}

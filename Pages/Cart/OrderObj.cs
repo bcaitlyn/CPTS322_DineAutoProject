@@ -15,6 +15,7 @@ namespace DineAuto.Pages.Cart
         public List<Item> OrderedItems { get; set; } // List of ordered items
         public DateTime OrderDate { get; set; } // Date and time order was placed
 
+
         /// <summary>
         /// Constructor for OrderObj.
         /// </summary>
@@ -24,6 +25,16 @@ namespace DineAuto.Pages.Cart
             RestaurantName = restaurantName;
             OrderedItems = orderedItems;
             OrderDate = DateTime.Now;
+        }
+
+        public decimal GetTotal()
+        {
+            decimal total = 0;  
+            foreach(Item item in this.OrderedItems)
+            {
+                total += item.ItemPrice;
+            }
+            return total;
         }
     }
 }

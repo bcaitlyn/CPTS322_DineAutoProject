@@ -17,8 +17,10 @@ namespace DineAuto.Pages.Catalogs
 {
     public class RestaurantCatalogModel : PageModel
     {
-        public Dictionary<string, List<Restaurant>> Restaurants;
-        public RestaurantCatalog catalog = new RestaurantCatalog();
+        [BindProperty]
+        public RestaurantCatalog catalog { get; set; } = new RestaurantCatalog();
+
+        public Dictionary<string, List<Restaurant>> Restaurants { get; set; } 
 
         [BindProperty]
         public string ItemName { get; set; }
@@ -35,11 +37,27 @@ namespace DineAuto.Pages.Catalogs
          * 
          * Programmer: Caitlyn Boyd
          * Last Modified: 4/3/25
+         * 
+         * Modified 4/22 by Emily to filter result of loadrestaurants with current search input.
          */
         public void OnGet()
         {
-            this.Restaurants = catalog.LoadRestaurants();
-            
+            Restaurants = catalog.LoadRestaurants();
+            Restaurants = catalog.SearchRestaurants(Restaurants);
+        }
+
+        public IActionResult OnPostSearch()
+        {
+            Restaurants = catalog.LoadRestaurants();
+            Restaurants = catalog.SearchRestaurants(Restaurants);
+            return Page();
+        }
+
+        public IActionResult OnPostReset()
+        {
+            catalog.SearchTerm = string.Empty;
+            Restaurants = catalog.LoadRestaurants();
+            return Page();
         }
 
         public void OnPostAddItem()
@@ -50,9 +68,6 @@ namespace DineAuto.Pages.Catalogs
             Item item = new Item(this.ItemName, this.ItemPrice, this.RestaurantName, new Guid());
             allCarts[HttpContext.Session.GetString("Username")].AddItem(item);
             cartMethods.SaveUsersCart(allCarts);
-            
-
-
         }
     }
 }

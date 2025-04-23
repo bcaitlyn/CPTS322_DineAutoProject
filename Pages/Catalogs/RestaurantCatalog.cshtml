@@ -8,6 +8,8 @@
    Description: Displays all the restaurants currently stored in the restaurantCatalog.json file.
     Programmer: Caitlyn Boyd
     Last Modified: 4/3/25
+
+    Modified 4/22 by Emily to add search function (search term and min/max price)
 *@
 <!DOCTYPE html>
 <html lang="en">
@@ -17,35 +19,52 @@
     <title>Restaurant Catalog</title>
 </head>
 <body>
+
     <h1>Restaurant Catalog</h1>
+    <form method="post">
+        <label for="searchTerm">Search:</label>
+        <input type="text" id="searchTerm" name="catalog.SearchTerm" value="@Model.catalog.SearchTerm" placeholder="restaurant name..." />
 
-    @foreach (var city in Model.Restaurants)
+        <button type="submit" asp-page-handler="Search">Search</button>
+        <button type="submit" asp-page-handler="Reset">Reset Search</button>
+    </form>
+
+
+    @if (Model.Restaurants != null && Model.Restaurants.Count > 0)
     {
-        foreach (var restaurant in city.Value)
+        @foreach (var city in Model.Restaurants)
         {
-    <div class="restaurant">
-        <h2>@restaurant.Name</h2>
-        <p><strong>Cuisine:</strong> @restaurant.Cuisine</p>
-        <p><strong>Location:</strong> @restaurant.Location</p>
+            <h3>@city.Key</h3> <!-- Optional: Show the city name -->
+            @foreach (var restaurant in city.Value)
+            {
+                <div class="restaurant">
+                    <h2>@restaurant.Name</h2>
+                    <p><strong>Cuisine:</strong> @restaurant.Cuisine</p>
+                    <p><strong>Location:</strong> @restaurant.Location</p>
 
-        <h3>Menu</h3>
-        <ul>
-            @foreach (var menuItem in restaurant.Menu)
-                    {
-            <li>
-                <strong>@menuItem.ItemName</strong> - $@menuItem.ItemPrice
-                <!-- Kaden: Add to Cart Button for Show Here-->
-                <form method="post">
-                    <input type="hidden" name="ItemName" value="@menuItem.ItemName" />
-                    <input type="hidden" name="ItemPrice" value="@menuItem.ItemPrice" />
-                    <input type="hidden" name="RestaurantName" value="@restaurant.Name" />
-                    <button type="submit" asp-page-handler="AddItem">Add Item to Cart</button>
-                </form>
-            </li>
-                    }
-        </ul>
-    </div>
+                    <h3>Menu</h3>
+                    <ul>
+                        @foreach (var menuItem in restaurant.Menu)
+                        {
+                            <li>
+                                <strong>@menuItem.ItemName</strong> - $@menuItem.ItemPrice
+                                <form method="post">
+                                    <input type="hidden" name="ItemName" value="@menuItem.ItemName" />
+                                    <input type="hidden" name="ItemPrice" value="@menuItem.ItemPrice" />
+                                    <input type="hidden" name="RestaurantName" value="@restaurant.Name" />
+                                    <button type="submit" asp-page-handler="AddItem">Add Item to Cart</button>
+                                </form>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
         }
     }
+    else
+    {
+        <p>No restaurants available.</p>
+    }
+
 </body>
 </html>

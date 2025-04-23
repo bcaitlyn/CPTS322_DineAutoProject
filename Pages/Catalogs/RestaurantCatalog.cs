@@ -21,7 +21,7 @@ namespace DineAuto.Pages.Catalogs
         {
             if (string.IsNullOrWhiteSpace(SearchTerm))
             {
-                // If no filters are set, return all restaurants (no filtering)
+                // If no filters are active return all restaurants
                 return Restaurants;
             }
 

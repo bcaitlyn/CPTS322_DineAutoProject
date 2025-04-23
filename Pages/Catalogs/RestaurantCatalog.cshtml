@@ -23,7 +23,7 @@
     <h1>Restaurant Catalog</h1>
     <form method="post">
         <label for="searchTerm">Search:</label>
-        <input type="text" id="searchTerm" name="catalog.SearchTerm" value="@Model.catalog.SearchTerm" placeholder="restaurant name..." />
+        <input type="text" id="searchTerm" name="catalog.SearchTerm" value="@Model.catalog.SearchTerm" placeholder="keyword..." />
 
         <button type="submit" asp-page-handler="Search">Search</button>
         <button type="submit" asp-page-handler="Reset">Reset Search</button>
@@ -34,7 +34,7 @@
     {
         @foreach (var city in Model.Restaurants)
         {
-            <h3>@city.Key</h3> <!-- Optional: Show the city name -->
+            <h3>@city.Key</h3>
             @foreach (var restaurant in city.Value)
             {
                 <div class="restaurant">

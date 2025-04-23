@@ -2,16 +2,16 @@
   "emily": {
     "items": [
       {
-        "ItemID": "d270f1ee-6c54-4b01-90e6-d701748f0851",
-        "ItemName": "Rice",
-        "ItemPrice": 3.25,
-        "RestaurantName": "Test1"
+        "ItemID": "00000000-0000-0000-0000-000000000000",
+        "ItemName": "Garlic Parmesan",
+        "ItemPrice": 6.99,
+        "RestaurantName": "Wazzu Wings"
       },
       {
-        "ItemID": "a13c23be-9873-45ab-92e8-8fcdf7fdf4ef",
-        "ItemName": "Chilli",
-        "ItemPrice": 2.46,
-        "RestaurantName": "Test1"
+        "ItemID": "00000000-0000-0000-0000-000000000000",
+        "ItemName": "Buffalo Wings",
+        "ItemPrice": 11.99,
+        "RestaurantName": "Wazzu Wings"
       }
     ]
   },

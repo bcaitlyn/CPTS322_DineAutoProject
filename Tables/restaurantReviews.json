@@ -5,6 +5,11 @@
         "Username": "CustomerOrderTestAccount",
         "Rating": 4,
         "Comment": "Test Review"
+      },
+      {
+        "Username": "testuser",
+        "Rating": 3,
+        "Comment": "Test Review from Different Customer"
       }
     ]
   }

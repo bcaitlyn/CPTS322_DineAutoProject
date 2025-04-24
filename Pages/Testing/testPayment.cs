@@ -2,24 +2,22 @@
 using DineAuto.Pages;
 using DineAuto.Pages.CreateAccounts;
 using DineAuto.Pages.UserDashboards.CustomerDashboard;
-using Microsoft.Extensions.Logging;
 using System.Transactions;
 
 namespace DineAuto.Testing
 {
     public partial class Tests
     {
-
-
         // Test case 02a: Payment feature. Unit testing.
         // Input: a test customer with no funds. should start with $0. then add $10.
         // Expected output: test customer should have $10.
         // Actual Output:
         public static void TestPayment_02a()
         {
-            //string testName = "TestName";
-            //CustomerDashboardModel testCustomer = new CustomerDashboardModel();
-            //testCustomer.currentUser = testName;
+            string testName = "TestName";
+            CustomerDashboardModel testCustomer = new CustomerDashboardModel();
+            testCustomer.currentUser = testName;
+
 
 
         }

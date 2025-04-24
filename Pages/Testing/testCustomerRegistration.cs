@@ -2,7 +2,6 @@
 using DineAuto.Pages;
 using DineAuto.Pages.CreateAccounts;
 using DineAuto.Pages.UserDashboards.CustomerDashboard;
-using Microsoft.Extensions.Logging;
 using System.Transactions;
 
 namespace DineAuto.Testing

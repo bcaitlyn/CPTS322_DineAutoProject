@@ -44,6 +44,9 @@ namespace DineAuto.Testing
             }
         }
 
+        /// <summary>
+        /// Tests adding an item to cart
+        /// </summary>
         public static void TestAddItemToCart()
         {
             Item burger = new Item("Cheese Burger", 12, "Coug Eats", new Guid());
@@ -66,6 +69,9 @@ namespace DineAuto.Testing
             }
         }
 
+        /// <summary>
+        /// Tests clearing the cart of all items
+        /// </summary>
         public static void TestClearCart()
         {
             Dictionary<string, CartObj> usersCarts = LoadUsersCart();

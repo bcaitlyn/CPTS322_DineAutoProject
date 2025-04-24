@@ -52,6 +52,9 @@
             }
         }
 
+        /// <summary>
+        /// Tests if customer login works correctly
+        /// </summary>
         public static void TestCustomerLogin()
         {
             string filePath = "Pages/Testing/TestingTables/testCustomers.json";
@@ -70,6 +73,9 @@
             }
         }
 
+        /// <summary>
+        /// Tests employee login
+        /// </summary>
         public static void TestEmployeeLogin()
         {
             string filePath = "Pages/Testing/TestingTables/testEmployees.json";
@@ -88,6 +94,9 @@
             }
         }
 
+        /// <summary>
+        /// Tests owner login
+        /// </summary>
         public static void TestOwnerLogin()
         {
             string filePath = "Pages/Testing/TestingTables/testOwners.json";
@@ -106,6 +115,9 @@
             }
         }
 
+        /// <summary>
+        /// Tests admin login
+        /// </summary>
         public static void TestAdminLogin()
         {
             string filePath = "Pages/Testing/TestingTables/testAdmins.json";

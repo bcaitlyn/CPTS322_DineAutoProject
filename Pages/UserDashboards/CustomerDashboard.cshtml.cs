@@ -8,10 +8,6 @@ using System.Xml;
 // this file created by Emily 03/28:
 // Payment feature note: at this time customers ONLY exist in customerFunds.json if they have at some point added funds.
 // So to check if they have enough to pay for their order, you have to check if they're in the table first.
-
-// TO-DO: populate customerFunds.json with a 0 when they create account.
-
-// resolved as of: ______
 namespace DineAuto.Pages.UserDashboards.CustomerDashboard
 {
     public class CustomerDashboardModel : PageModel
@@ -22,7 +18,8 @@ namespace DineAuto.Pages.UserDashboards.CustomerDashboard
         public decimal Amount { get; set; }
 
         // underlying data structure of all the json files are key-value dictionaries
-        private Dictionary<string, decimal> userFunds;
+        //4/24 made this public so I can access it when testing.
+        public Dictionary<string, decimal> userFunds;
 
         public string FilePath = "Tables/customerFunds.json";
 

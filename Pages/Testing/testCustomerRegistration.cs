@@ -1,14 +1,14 @@
 // This file created by Emily 4/23
 using DineAuto.Pages;
 using DineAuto.Pages.CreateAccounts;
+using DineAuto.Pages.UserDashboards.CustomerDashboard;
 using Microsoft.Extensions.Logging;
 using System.Transactions;
 
 namespace DineAuto.Testing
 {
-	public class Tests
+	public partial class Tests
 	{
-		private static readonly ILogger logger = LoggerFactory.Create(builder => builder.AddConsole()).CreateLogger<Tests>();
 		// Test case 01a: Customer Registration. Unit testing -- only testing AddUser(). 
 		// Input: a blank customer data table, and sample user to add.
 		// Expected output: This test should be the only entry in the customer table once it's added.
@@ -51,7 +51,7 @@ namespace DineAuto.Testing
 			testCreateCustomer.users = usersTest;
 			testCreateCustomer.AddUser(testName, testPW); // should fail here
 
-			if (usersTest.Count == 1)
+			if (usersTest.Count == 1 && testCreateCustomer.users[testName] == testPW)
 			{
 				Console.WriteLine("Add Customer Test with dupe PASSED.");
 				return;
@@ -63,30 +63,5 @@ namespace DineAuto.Testing
 			}
 		}
 
-
-		// add more test functions here:
-
-		//public static bool TestCustomerLogin_01()
-		//{
-		//	// Your logic here
-		//	return true;
-		//}
-
-		//public static bool TestCustomerLogin_01()
-		//{
-		//	// Your logic here
-		//	return true;
-		//}
-
-
-		// and call your test here. This main() is called from Program.cs right before the app runs.
-		public static int Main()
-		{
-			logger.LogInformation("TESTING STARTED!");
-			TestCustomerRegistration_01a();
-			TestCustomerRegistration_01b();
-			logger.LogInformation("DONE TESTING! Running app . . .");
-			return 0;
-		}
 	}
 }

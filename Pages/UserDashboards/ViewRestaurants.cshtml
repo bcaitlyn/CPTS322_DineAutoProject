@@ -24,3 +24,10 @@
         }
     </ul>
 }
+@foreach(var stat in Model.Stats)
+{
+    <h2>@stat.RestaurantName</h2>
+        <p><strong>Total Orders: </strong> @stat.TotalOrders</p>
+        <p><strong>Total Revenue: $</strong> @stat.Revenue</p>
+        }
+

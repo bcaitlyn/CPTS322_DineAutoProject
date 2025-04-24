@@ -44,6 +44,7 @@ namespace DineAuto.Pages.Catalogs
         {
             Restaurants = catalog.LoadRestaurants();
             Restaurants = catalog.SearchRestaurants(Restaurants);
+            
         }
 
         public IActionResult OnPostSearch()
@@ -57,6 +58,7 @@ namespace DineAuto.Pages.Catalogs
         {
             catalog.SearchTerm = string.Empty;
             Restaurants = catalog.LoadRestaurants();
+            
             return Page();
         }
 
@@ -68,6 +70,7 @@ namespace DineAuto.Pages.Catalogs
             Item item = new Item(this.ItemName, this.ItemPrice, this.RestaurantName, new Guid());
             allCarts[HttpContext.Session.GetString("Username")].AddItem(item);
             cartMethods.SaveUsersCart(allCarts);
+
         }
 
         // Yevin 4/23 get average ratings for restaurant.

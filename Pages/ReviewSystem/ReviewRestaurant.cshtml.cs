@@ -67,8 +67,21 @@ namespace DineAuto.Pages.ReviewSystem
             if (!reviewsData[City].ContainsKey(RestaurantName))
                 reviewsData[City][RestaurantName] = new List<RestaurantReview>();
 
-            reviewsData[City][RestaurantName].Add(newReview);
+            // Preserve existing reviews
+            var existingReviews = reviewsData[City][RestaurantName];
+            existingReviews.Add(new RestaurantReview
+            {
+                Username = username,
+                Rating = Rating,
+                Comment = Comment,
+                OwnerReply = null // Explicitly preserve reply structure
+            });
+
+            // Reassign and serialize
+            reviewsData[City][RestaurantName] = existingReviews;
+
             System.IO.File.WriteAllText(filePath, JsonSerializer.Serialize(reviewsData, new JsonSerializerOptions { WriteIndented = true }));
+
 
             Message = "Review submitted successfully!";
             return Page();
@@ -79,6 +92,7 @@ namespace DineAuto.Pages.ReviewSystem
             public string Username { get; set; }
             public int Rating { get; set; }
             public string Comment { get; set; }
+            public string? OwnerReply { get; set; }
         }
     }
 }

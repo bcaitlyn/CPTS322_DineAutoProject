@@ -12,12 +12,17 @@
 }
 else
 {
-    foreach (var review in Model.Reviews)
+    @foreach (var review in Model.Reviews)
     {
         <div class="border rounded p-3 mb-3">
             <p><strong>User:</strong> @review.Username</p>
             <p><strong>Rating:</strong> @review.Rating / 5</p>
             <p><strong>Comment:</strong> @review.Comment</p>
+
+            @if (!string.IsNullOrWhiteSpace(review.OwnerReply))
+            {
+                <p class="text-primary"><strong>Owner Reply:</strong> @review.OwnerReply</p>
+            }
         </div>
     }
 }

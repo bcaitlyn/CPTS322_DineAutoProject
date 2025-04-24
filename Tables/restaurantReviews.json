@@ -2,14 +2,22 @@
   "Tacoma": {
     "Tacoma BBQ": [
       {
-        "Username": "CustomerOrderTestAccount",
+        "Username": "testuser",
         "Rating": 4,
-        "Comment": "Test Review"
+        "Comment": "Test Review",
+        "OwnerReply": "Test Reply"
       },
       {
-        "Username": "testuser",
+        "Username": "CustomerOrderTestAccount",
         "Rating": 3,
-        "Comment": "Test Review from Different Customer"
+        "Comment": "Review from different customer test",
+        "OwnerReply": null
+      },
+      {
+        "Username": "CustomerOrderTestAccount",
+        "Rating": 2,
+        "Comment": "New Review Test. Check Preserve Old Data",
+        "OwnerReply": "New Reply Test"
       }
     ]
   }

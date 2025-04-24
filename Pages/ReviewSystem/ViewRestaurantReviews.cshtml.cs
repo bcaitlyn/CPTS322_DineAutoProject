@@ -25,6 +25,7 @@ namespace DineAuto.Pages.ReviewSystem
             public string Username { get; set; }
             public int Rating { get; set; }
             public string Comment { get; set; }
+             public string? OwnerReply { get; set; }
         }
 
         public IActionResult OnGet()

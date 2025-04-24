@@ -65,12 +65,26 @@
                         {
                             <li>
                                 <strong>@menuItem.ItemName</strong> - $@menuItem.ItemPrice
-                                <form method="post">
-                                    <input type="hidden" name="ItemName" value="@menuItem.ItemName" />
-                                    <input type="hidden" name="ItemPrice" value="@menuItem.ItemPrice" />
-                                    <input type="hidden" name="RestaurantName" value="@restaurant.Name" />
-                                    <button type="submit" asp-page-handler="AddItem">Add Item to Cart</button>
-                                </form>
+                                <div class="d-flex gap-2 mt-1">
+                                    <!-- Add to Cart: Yevin, 04/23 Style change-->
+                                    <form method="post">
+                                        <input type="hidden" name="ItemName" value="@menuItem.ItemName" />
+                                        <input type="hidden" name="ItemPrice" value="@menuItem.ItemPrice" />
+                                        <input type="hidden" name="RestaurantName" value="@restaurant.Name" />
+                                        <button type="submit" asp-page-handler="AddItem" class="btn btn-outline-dark btn-sm">
+                                            Add Item to Cart
+                                        </button>
+                                    </form>
+
+                                    <!-- Review This Item:  Yevin, 04/23 -->
+                                    <a asp-page="/ReviewSystem/ReviewItem"
+                                    asp-route-city="@city.Key"
+                                    asp-route-restaurantName="@restaurant.Name"
+                                    asp-route-itemName="@menuItem.ItemName"
+                                    class="btn btn-outline-secondary btn-sm">
+                                        Review This Item
+                                    </a>
+                                </div>
                             </li>
                         }
                     </ul>

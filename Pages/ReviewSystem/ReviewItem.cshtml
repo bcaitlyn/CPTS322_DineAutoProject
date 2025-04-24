@@ -1,0 +1,29 @@
+@page
+@model DineAuto.Pages.ReviewSystem.ReviewItemModel
+@{
+    ViewData["Title"] = "Review Item";
+}
+
+<h2 class="display-5">Review: @Model.ItemName</h2>
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <div class="alert alert-info">@Model.Message</div>
+}
+
+<form method="post">
+    <div class="mb-3">
+        <label>Rating (1–5)</label>
+        <input type="number" name="Rating" min="1" max="5" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label>Comment</label>
+        <textarea name="Comment" rows="3" class="form-control"></textarea>
+    </div>
+
+    <input type="hidden" name="City" value="@Model.City" />
+    <input type="hidden" name="RestaurantName" value="@Model.RestaurantName" />
+    <input type="hidden" name="ItemName" value="@Model.ItemName" />
+
+    <button type="submit" class="btn btn-primary">Submit Item Review</button>
+</form>

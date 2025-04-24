@@ -33,6 +33,16 @@ namespace DineAuto.Testing
             Tests.TestLeaveItemReview();
             Tests.TestOwnerReplyToReview();
 
+            // Test Login
+            Tests.TestCustomerLogin();
+            Tests.TestEmployeeLogin();
+            Tests.TestOwnerLogin();
+            Tests.TestAdminLogin();
+
+            // Cart Tests
+            Tests.TestAddItemToCart();
+            Tests.TestClearCart();
+
             logger.LogInformation("DONE TESTING! Running app . . .");
             return 0;
         }

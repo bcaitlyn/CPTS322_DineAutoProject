@@ -50,6 +50,13 @@
     "items": []
   },
   "TestName": {
-    "items": []
+    "items": [
+      {
+        "ItemID": "00000000-0000-0000-0000-000000000000",
+        "ItemName": "Smoked Beef",
+        "ItemPrice": 22.99,
+        "RestaurantName": "Tacoma BBQ"
+      }
+    ]
   }
 }

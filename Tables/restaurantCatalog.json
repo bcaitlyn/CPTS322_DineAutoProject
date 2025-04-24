@@ -7,7 +7,8 @@
       "Menu": [
         {
           "ItemName": "Smoked Beef",
-          "ItemPrice": 22.99
+          "ItemPrice": 22.99,
+          "ItemImage": "/images/e74f25ed-270a-499f-9835-43f722c0da95.jpg"
         }
       ],
       "OwnerUsername": "OwnerAccountTest"
@@ -20,12 +21,14 @@
       "Location": "Seattle, WA",
       "Menu": [
         {
-          "ItemName": "Grilled Salmon",
-          "ItemPrice": 22.99
+          "ItemName": "Grilled Samon",
+          "ItemPrice": 22.99,
+          "ItemImage": "/images/9220edcb-f8a1-4789-be45-5cb011fc49be.jpg"
         },
         {
           "ItemName": "Clam Chowder",
-          "ItemPrice": 8.99
+          "ItemPrice": 8.99,
+          "ItemImage": "/images/327a1d1c-9124-48d5-ae5c-6ef3cb86dda8.jpg"
         }
       ],
       "OwnerUsername": "OwnerAccountTest"
@@ -37,11 +40,13 @@
       "Menu": [
         {
           "ItemName": "Ramen Bowl",
-          "ItemPrice": 12.99
+          "ItemPrice": 12.99,
+          "ItemImage": "/images/16e6472e-5ad3-44f7-8692-acca8a48863b.jpg"
         },
         {
           "ItemName": "Banh Mi",
-          "ItemPrice": 9.99
+          "ItemPrice": 9.99,
+          "ItemImage": "/images/7d40c321-70ac-4112-a57f-0c7c0d409582.jpg"
         }
       ],
       "OwnerUsername": "OwnerAccountTest"
@@ -55,11 +60,13 @@
       "Menu": [
         {
           "ItemName": "Steak Frites",
-          "ItemPrice": 19.99
+          "ItemPrice": 19.99,
+          "ItemImage": "/images/0f88c5b7-0ea0-4f98-be84-cbd8ce4807e5.jpg"
         },
         {
-          "ItemName": "Ceaser Salad",
-          "ItemPrice": 7.99
+          "ItemName": "Caesar Salad",
+          "ItemPrice": 7.99,
+          "ItemImage": "/images/03ee19ee-de02-44d8-9bba-fdda6c5283f1.jpg"
         }
       ],
       "OwnerUsername": "OwnerAccountTest"
@@ -73,11 +80,13 @@
       "Menu": [
         {
           "ItemName": "Eggs Benedict",
-          "ItemPrice": 10.99
+          "ItemPrice": 10.99,
+          "ItemImage": "/images/203fd2ab-c0ad-4c66-8c9b-2c97c18d0428.jpg"
         },
         {
           "ItemName": "Pancake Stack",
-          "ItemPrice": 8.49
+          "ItemPrice": 8.49,
+          "ItemImage": "/images/f56c9cc7-511b-4cef-9fbb-fa50b6b92e1e.jpg"
         }
       ],
       "OwnerUsername": "OwnerAccountTest"
@@ -89,11 +98,13 @@
       "Menu": [
         {
           "ItemName": "Buffalo Wings",
-          "ItemPrice": 11.99
+          "ItemPrice": 11.99,
+          "ItemImage": "/images/f7bdabe2-968d-4566-8316-22e485ebe449.webp"
         },
         {
-          "ItemName": "Garlic Parmesan",
-          "ItemPrice": 6.99
+          "ItemName": "Garlic Parmesan Wings",
+          "ItemPrice": 12.99,
+          "ItemImage": "/images/df8c925a-e210-4f93-b16c-a5815801994b.jpg"
         }
       ],
       "OwnerUsername": "OwnerAccountTest"

@@ -84,6 +84,16 @@
                                     class="btn btn-outline-secondary btn-sm">
                                         Review This Item
                                     </a>
+
+                                    <!-- View Reviews of items:  Yevin, 04/23 -->
+                                    <a asp-page="/ReviewSystem/ViewItemReviews"
+                                    asp-route-city="@city.Key"
+                                    asp-route-restaurantName="@restaurant.Name"
+                                    asp-route-itemName="@menuItem.ItemName"
+                                    class="btn btn-outline-info btn-sm">
+                                    View Item Reviews
+                                    </a>
+
                                 </div>
                             </li>
                         }

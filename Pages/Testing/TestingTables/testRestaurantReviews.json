@@ -1,0 +1,12 @@
+{
+  "Pullman": {
+    "Test Bistro": [
+      {
+        "Username": "customer1",
+        "Rating": 5,
+        "Comment": "Excellent food!",
+        "OwnerReply": "Thank you for the kind words!"
+      }
+    ]
+  }
+}

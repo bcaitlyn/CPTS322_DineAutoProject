@@ -15,8 +15,9 @@ namespace DineAuto.Testing
         public static int Main()
         {
             logger.LogInformation("TESTING STARTED!");
-            // TestCustomerRegistration_01a();
-            // TestCustomerRegistration_01b();
+            // Customer Registration Tests
+            TestCustomerRegistration_01a();
+            TestCustomerRegistration_01b();
 
             // Owner Restaurant Tests
             Tests.TestRegisterRestaurant();
@@ -26,6 +27,11 @@ namespace DineAuto.Testing
             Tests.TestPlaceValidOrder();
             Tests.TestPlaceOrderMultipleRestaurants();
             Tests.TestPlaceOrderEmptyCart();
+
+            // Test Review system for restaurants and items
+            Tests.TestLeaveRestaurantReview();
+            Tests.TestLeaveItemReview();
+            Tests.TestOwnerReplyToReview();
 
             logger.LogInformation("DONE TESTING! Running app . . .");
             return 0;

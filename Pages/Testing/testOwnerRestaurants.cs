@@ -1,4 +1,4 @@
-// This file created by Yevin 4/24
+// This file was created by Yevin 4/24
 using DineAuto.Pages.RegisterRestaurants;
 using System.Text.Json;
 using System.Reflection;

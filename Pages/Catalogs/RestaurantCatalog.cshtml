@@ -39,8 +39,27 @@
             {
                 <div class="restaurant">
                     <h2>@restaurant.Name</h2>
+                    <!-- Yevin 04/23 Display Average restaurant Rating-->
+                    <p><strong>Average Rating:</strong> @Model.GetRestaurantAverageRating(city.Key, restaurant.Name)</p>
                     <p><strong>Cuisine:</strong> @restaurant.Cuisine</p>
                     <p><strong>Location:</strong> @restaurant.Location</p>
+
+                    <!-- Review This Restaurant Button: Yevin,- 04/23-->
+                    <a asp-page="/ReviewSystem/ReviewRestaurant"
+                    asp-route-city="@city.Key"
+                    asp-route-restaurantName="@restaurant.Name"
+                    class="btn btn-outline-primary btn-sm mb-2">
+                        Review This Restaurant
+                    </a>
+
+                    <!-- View This restaurants Reviews Button: Yevin,- 04/23-->
+                    <a asp-page="/ReviewSystem/ViewRestaurantReviews"
+                    asp-route-city="@city.Key"
+                    asp-route-restaurantName="@restaurant.Name"
+                    class="btn btn-outline-secondary btn-sm mb-2 ms-2">
+                    View Restaurant Reviews
+                    </a>
+
 
                     <h3>Menu</h3>
                     <ul>
@@ -48,12 +67,37 @@
                         {
                             <li>
                                 <strong>@menuItem.ItemName</strong> - $@menuItem.ItemPrice
-                                <form method="post">
-                                    <input type="hidden" name="ItemName" value="@menuItem.ItemName" />
-                                    <input type="hidden" name="ItemPrice" value="@menuItem.ItemPrice" />
-                                    <input type="hidden" name="RestaurantName" value="@restaurant.Name" />
-                                    <button type="submit" asp-page-handler="AddItem">Add Item to Cart</button>
-                                </form>
+                                <br /><span class="text-muted">Average Rating: @Model.GetItemAverageRating(city.Key, restaurant.Name, menuItem.ItemName)</span>
+                                <div class="d-flex gap-2 mt-1">
+                                    <!-- Add to Cart: Yevin, 04/23 Style change-->
+                                    <form method="post">
+                                        <input type="hidden" name="ItemName" value="@menuItem.ItemName" />
+                                        <input type="hidden" name="ItemPrice" value="@menuItem.ItemPrice" />
+                                        <input type="hidden" name="RestaurantName" value="@restaurant.Name" />
+                                        <button type="submit" asp-page-handler="AddItem" class="btn btn-outline-dark btn-sm">
+                                            Add Item to Cart
+                                        </button>
+                                    </form>
+
+                                    <!-- Review This Item:  Yevin, 04/23 -->
+                                    <a asp-page="/ReviewSystem/ReviewItem"
+                                    asp-route-city="@city.Key"
+                                    asp-route-restaurantName="@restaurant.Name"
+                                    asp-route-itemName="@menuItem.ItemName"
+                                    class="btn btn-outline-secondary btn-sm">
+                                        Review This Item
+                                    </a>
+
+                                    <!-- View Reviews of items:  Yevin, 04/23 -->
+                                    <a asp-page="/ReviewSystem/ViewItemReviews"
+                                    asp-route-city="@city.Key"
+                                    asp-route-restaurantName="@restaurant.Name"
+                                    asp-route-itemName="@menuItem.ItemName"
+                                    class="btn btn-outline-info btn-sm">
+                                    View Item Reviews
+                                    </a>
+
+                                </div>
                             </li>
                         }
                     </ul>

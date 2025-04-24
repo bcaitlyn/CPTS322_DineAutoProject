@@ -19,6 +19,20 @@ namespace DineAuto.Pages.UserDashboards
         public string City { get; set; }
         public List<MenuItem> Menu { get; set; } = new();
 
+        // Yevin 4/23 Owners can view customer reviews on their restaurants
+        public class RestaurantReview
+        {
+            public string Username { get; set; }
+            public int Rating { get; set; }
+            public string Comment { get; set; }
+            public string? OwnerReply { get; set; }
+        }
+
+        public List<RestaurantReview> Reviews { get; set; } = new();
+        [BindProperty] public string ReplyText { get; set; }
+        [BindProperty] public int ReplyIndex { get; set; }
+
+
         public IActionResult OnGet(string city, string name)
         {
             if (string.IsNullOrWhiteSpace(city) || string.IsNullOrWhiteSpace(name))
@@ -54,9 +68,39 @@ namespace DineAuto.Pages.UserDashboards
 
             Menu = restaurant.Menu ?? new List<MenuItem>();
 
+            string reviewPath = "Tables/restaurantReviews.json";
+            if (System.IO.File.Exists(reviewPath))
+            {
+                var json = System.IO.File.ReadAllText(reviewPath);
+                var data = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<RestaurantReview>>>>(json);
+                if (data != null && data.ContainsKey(City) && data[City].ContainsKey(RestaurantName))
+                {
+                    Reviews = data[City][RestaurantName];
+                }
+            }
+
             return Page();
         }
 
+        public IActionResult OnPostReply(string city, string restaurantName)
+        {
+            string path = "Tables/restaurantReviews.json";
+            var json = System.IO.File.ReadAllText(path);
+            var data = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<RestaurantReview>>>>(json);
+
+            if (data != null &&
+                data.ContainsKey(city) &&
+                data[city].ContainsKey(restaurantName) &&
+                ReplyIndex >= 0 &&
+                ReplyIndex < data[city][restaurantName].Count)
+            {
+                data[city][restaurantName][ReplyIndex].OwnerReply = ReplyText;
+                System.IO.File.WriteAllText(path, JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true }));
+            }
+
+            return RedirectToPage(new { city, name = restaurantName });
+        }
+        
         public IActionResult OnPostAddItem(string city, string restaurantName, string newItemName, double newItemPrice)
         {
             if (string.IsNullOrEmpty(city) || string.IsNullOrEmpty(restaurantName) ||

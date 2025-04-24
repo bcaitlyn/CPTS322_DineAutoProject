@@ -69,5 +69,62 @@ namespace DineAuto.Pages.Catalogs
             allCarts[HttpContext.Session.GetString("Username")].AddItem(item);
             cartMethods.SaveUsersCart(allCarts);
         }
+
+        // Yevin 4/23 get average ratings for restaurant.
+        public string GetRestaurantAverageRating(string city, string restaurantName)
+        {
+            string path = "Tables/restaurantReviews.json";
+
+            if (!System.IO.File.Exists(path)) return "No reviews";
+
+            var json = System.IO.File.ReadAllText(path);
+
+            if (!string.IsNullOrWhiteSpace(json))
+            {
+                var reviewsData = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, List<DineAuto.Pages.ReviewSystem.ViewRestaurantReviewsModel.RestaurantReview>>>>(json);
+                if (reviewsData != null &&
+                    reviewsData.ContainsKey(city) &&
+                    reviewsData[city].ContainsKey(restaurantName))
+                {
+                    var reviews = reviewsData[city][restaurantName];
+                    if (reviews.Count > 0)
+                    {
+                        double avg = reviews.Average(r => r.Rating);
+                        return $"{avg:F1} / 5";
+                    }
+                }
+            }
+
+            return "No reviews";
+        }
+
+        // Yevin 4/23 get average ratings for restaurant items.
+        public string GetItemAverageRating(string city, string restaurantName, string itemName)
+        {
+            string path = "Tables/itemReviews.json";
+
+            if (!System.IO.File.Exists(path)) return "No reviews";
+
+            var json = System.IO.File.ReadAllText(path);
+
+            if (!string.IsNullOrWhiteSpace(json))
+            {
+                var data = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Dictionary<string, List<DineAuto.Pages.ReviewSystem.ViewItemReviewsModel.ItemReview>>>>>(json);
+                if (data != null &&
+                    data.ContainsKey(city) &&
+                    data[city].ContainsKey(restaurantName) &&
+                    data[city][restaurantName].ContainsKey(itemName))
+                {
+                    var reviews = data[city][restaurantName][itemName];
+                    if (reviews.Count > 0)
+                    {
+                        double avg = reviews.Average(r => r.Rating);
+                        return $"{avg:F1} / 5";
+                    }
+                }
+            }
+
+            return "No reviews";
+        }
     }
 }

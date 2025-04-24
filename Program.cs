@@ -1,3 +1,5 @@
+using DineAuto.Testing;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -25,5 +27,8 @@ app.UseAuthorization();
 app.MapStaticAssets();
 app.MapRazorPages()
    .WithStaticAssets();
+
+var logger = app.Services.GetRequiredService<ILogger<Program>>();
+Tests.Main(logger);
 
 app.Run();

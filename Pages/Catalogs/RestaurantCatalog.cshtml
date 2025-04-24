@@ -39,6 +39,8 @@
             {
                 <div class="restaurant">
                     <h2>@restaurant.Name</h2>
+                    <!-- Yevin 04/23 Display Average restaurant Rating-->
+                    <p><strong>Average Rating:</strong> @Model.GetRestaurantAverageRating(city.Key, restaurant.Name)</p>
                     <p><strong>Cuisine:</strong> @restaurant.Cuisine</p>
                     <p><strong>Location:</strong> @restaurant.Location</p>
 
@@ -65,6 +67,7 @@
                         {
                             <li>
                                 <strong>@menuItem.ItemName</strong> - $@menuItem.ItemPrice
+                                <br /><span class="text-muted">Average Rating: @Model.GetItemAverageRating(city.Key, restaurant.Name, menuItem.ItemName)</span>
                                 <div class="d-flex gap-2 mt-1">
                                     <!-- Add to Cart: Yevin, 04/23 Style change-->
                                     <form method="post">

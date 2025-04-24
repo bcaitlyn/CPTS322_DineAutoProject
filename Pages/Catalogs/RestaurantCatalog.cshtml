@@ -42,6 +42,14 @@
                     <p><strong>Cuisine:</strong> @restaurant.Cuisine</p>
                     <p><strong>Location:</strong> @restaurant.Location</p>
 
+                    <!-- Review This Restaurant Button: Yevin,- 04/23-->
+                    <a asp-page="/ReviewSystem/ReviewRestaurant"
+                    asp-route-city="@city.Key"
+                    asp-route-restaurantName="@restaurant.Name"
+                    class="btn btn-outline-primary btn-sm mb-2">
+                        Review This Restaurant
+                    </a>
+
                     <h3>Menu</h3>
                     <ul>
                         @foreach (var menuItem in restaurant.Menu)

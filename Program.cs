@@ -28,7 +28,7 @@ app.MapStaticAssets();
 app.MapRazorPages()
    .WithStaticAssets();
 
-var logger = app.Services.GetRequiredService<ILogger<Program>>();
-Tests.Main(logger);
+
+Tests.Main();
 
 app.Run();

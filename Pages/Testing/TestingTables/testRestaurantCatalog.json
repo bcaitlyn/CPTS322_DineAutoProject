@@ -1,0 +1,16 @@
+{
+  "Pullman": [
+    {
+      "name": "Test Bistro",
+      "cuisine": "Italian",
+      "location": "Pullman, WA",
+      "menu": [
+        {
+          "name": "Lasagna",
+          "price": "$12.99",
+          "description": "Cheesy meat lasagna"
+        }
+      ]
+    }
+  ]
+}

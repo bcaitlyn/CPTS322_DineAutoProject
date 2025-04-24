@@ -45,7 +45,7 @@ namespace DineAuto.Pages.CreateAccounts
         {
             if (!users.ContainsKey(username))
             {
-                users[username] = BCrypt.Net.BCrypt.HashPassword(pw); ;
+                users[username] = BCrypt.Net.BCrypt.HashPassword(pw);
                 SaveUsers();
             }
         }

@@ -26,8 +26,8 @@ namespace DineAuto.Testing
                 SearchTerm = testCity
             };
 
-            PrintItem testItem = new PrintItem("itemTest", 1.00m);
-            Restaurant testRestaurant = new Restaurant("res", "american", testCity, new List<PrintItem>{testItem }, "testOwner");
+            PrintItem testItem = new PrintItem("itemTest", 1.00m, null);
+            Restaurant testRestaurant = new Restaurant("res", "american", testCity, new List<PrintItem>{testItem }, "testOwner", 0);
 
             Dictionary<string, List<Restaurant>> restaurants = new Dictionary<string, List<Restaurant>>
             {
@@ -65,8 +65,8 @@ namespace DineAuto.Testing
                 SearchTerm = "Fakesearch"
             };
 
-            PrintItem testItem = new PrintItem("itemTest", 1.00m);
-            Restaurant testRestaurant = new Restaurant("res", "american", testCity, new List<PrintItem> { testItem }, "testOwner");
+            PrintItem testItem = new PrintItem("itemTest", 1.00m, null);
+            Restaurant testRestaurant = new Restaurant("res", "american", testCity, new List<PrintItem> { testItem }, "testOwner", 0);
 
             Dictionary<string, List<Restaurant>> restaurants = new Dictionary<string, List<Restaurant>>
             {

@@ -12,6 +12,7 @@ using DineAuto.Pages.Catalogs;
  */
 
  // yevin 04/05 : Addition of OwnerUsername to store owner that created restaurant
+ // Caitlyn 04/24: Added total orders
 namespace DineAuto.Pages.Catalogs
 {
 	public class Restaurant
@@ -20,10 +21,13 @@ namespace DineAuto.Pages.Catalogs
 		public string Cuisine { get; set; }
 		public string Location { get; set; }
 		public string OwnerUsername {get; set;}
+		// CB: Added totalOrders and intTotalOrders 4/24/25
+		
 
 		public List<PrintItem> Menu;
+        public int TotalOrders { get; set; }
 
-		public Restaurant(string name, string cuisine, string location, List<PrintItem> menu, string ownerUsername)
+        public Restaurant(string name, string cuisine, string location, List<PrintItem> menu, string ownerUsername, int totalOrders)
 		{
 			this.Name = name;
 			this.Cuisine = cuisine;

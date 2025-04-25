@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using DineAuto.Pages.Catalogs;
 
 namespace DineAuto.Pages.UserDashboards
 {
@@ -67,6 +68,7 @@ namespace DineAuto.Pages.UserDashboards
             }
 
             Menu = restaurant.Menu ?? new List<MenuItem>();
+            
 
             string reviewPath = "Tables/restaurantReviews.json";
             if (System.IO.File.Exists(reviewPath))
@@ -101,13 +103,21 @@ namespace DineAuto.Pages.UserDashboards
             return RedirectToPage(new { city, name = restaurantName });
         }
         
-        public IActionResult OnPostAddItem(string city, string restaurantName, string newItemName, double newItemPrice)
+        public IActionResult OnPostAddItem(string city, string restaurantName, string newItemName, double newItemPrice, IFormFile itemImage)
         {
             if (string.IsNullOrEmpty(city) || string.IsNullOrEmpty(restaurantName) ||
-                string.IsNullOrEmpty(newItemName) || newItemPrice <= 0)
+                string.IsNullOrEmpty(newItemName) || newItemPrice <= 0 || itemImage == null)
             {
                 return RedirectToPage("/Error");
             }
+
+            var fileName = Guid.NewGuid() + Path.GetExtension(itemImage.FileName);
+            var imagesDirectory = Path.Combine("wwwroot", "images");
+            Directory.CreateDirectory(imagesDirectory);
+
+            var filePath = Path.Combine(imagesDirectory, fileName);
+            using var stream = new FileStream(filePath, FileMode.Create);
+            itemImage.CopyTo(stream);
 
             string catalogPath = "Tables/restaurantCatalog.json";
             if (!System.IO.File.Exists(catalogPath)) return RedirectToPage("/Error");
@@ -128,7 +138,8 @@ namespace DineAuto.Pages.UserDashboards
             restaurant.Menu.Add(new MenuItem
             {
                 ItemName = newItemName,
-                ItemPrice = newItemPrice
+                ItemPrice = newItemPrice,
+                ItemImage = "/images/" + fileName,
             });
 
             // Replace the original object in the list to preserve all fields (especially OwnerUsername)
@@ -184,12 +195,15 @@ namespace DineAuto.Pages.UserDashboards
             public string Location { get; set; }
             public List<MenuItem> Menu { get; set; }
             public string OwnerUsername { get; set; }
+            public int TotalOrders { get; set; }
         }
 
         public class MenuItem
         {
             public string ItemName { get; set; }
             public double ItemPrice { get; set; }
+
+            public string ItemImage { get; set; }
         }
     }
 }

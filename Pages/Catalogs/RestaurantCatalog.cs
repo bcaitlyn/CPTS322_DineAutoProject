@@ -3,6 +3,9 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using DineAuto.Pages.Cart;
+
+using System.Security.Cryptography.X509Certificates;
 
 /*
  * Class: RestaurantCatalog
@@ -11,7 +14,7 @@ using System.Reflection;
  */
 namespace DineAuto.Pages.Catalogs
 {
-    
+
     public class RestaurantCatalog
     {
         public string SearchTerm { get; set; } = string.Empty; // Emily 4/22: empty string by default until user types and enters in search bar
@@ -47,11 +50,11 @@ namespace DineAuto.Pages.Catalogs
             return filteredRestaurants;
         }
 
-       
+
 
 
         // Path to the orders.json file
-        private readonly string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Tables", "restaurantCatalog.json");
+        private string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Tables", "restaurantCatalog.json");
 
 
 
@@ -68,9 +71,60 @@ namespace DineAuto.Pages.Catalogs
             if (File.Exists(filePath))
             {
                 string json = File.ReadAllText(filePath);
-                return JsonConvert.DeserializeObject<Dictionary<string, List<Restaurant>>>(json) ?? new Dictionary<string, List<Restaurant>>();
+                return Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, List<Restaurant>>>(json) ?? new Dictionary<string, List<Restaurant>>();
             }
             return new Dictionary<string, List<Restaurant>>();
         }
+
+        public List<RestaurantStat>CalculateStats(Dictionary<string, List<Restaurant>> restaurants)
+        {
+            List<RestaurantStat> stats = new List<RestaurantStat>();
+            foreach (var restaurantList in restaurants.Values)
+            {
+                foreach (var restaurant in restaurantList)
+                {
+                    stats.Add(CalculateStat(restaurant.Name));
+                }    
+            }
+            return stats;
+        }
+        public RestaurantStat CalculateStat(string restaurantName)
+        {
+            // Load orders
+            OrderMethods orderMethods = new OrderMethods();
+            Dictionary<string, List<OrderObj>> orders = orderMethods.LoadOrders();
+            int TotalOrders = 0;
+            double TotalRevenue = 0.0;
+            bool flag = false;
+            RestaurantStat stat;
+            // Count orders from this restaurant
+            foreach (var orderList in orders.Values)
+            {
+                foreach (var orderObj in orderList)
+                {
+                    if (orderObj.RestaurantName == restaurantName)
+                    {
+                        flag = true;
+                        TotalOrders++;
+                        
+                        foreach (var orderItem in orderObj.OrderedItems)
+                        {
+                            TotalRevenue = TotalRevenue +  (double)orderItem.ItemPrice;
+                        }
+                    }
+                }
+            }
+            if (flag)
+            {
+                stat = new RestaurantStat(TotalOrders, TotalRevenue, restaurantName);
+            }
+            else
+            {
+                stat = new RestaurantStat(0, 0.0,  restaurantName);
+            }
+            return stat;
+
+        }
+       
     }
 }

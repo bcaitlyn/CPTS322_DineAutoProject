@@ -25,5 +25,16 @@ namespace DineAuto.Pages.Cart
             OrderedItems = orderedItems;
             OrderDate = DateTime.Now;
         }
+
+        public decimal GetTotal()
+        {
+            decimal total = 0;
+            foreach (Item item in this.OrderedItems)
+            {
+                total += item.ItemPrice;
+            }
+            return total;
+        }
+
     }
 }

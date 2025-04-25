@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using DineAuto.Pages.Catalogs;
 
 namespace DineAuto.Pages.UserDashboards
 {
@@ -67,6 +68,7 @@ namespace DineAuto.Pages.UserDashboards
             }
 
             Menu = restaurant.Menu ?? new List<MenuItem>();
+            
 
             string reviewPath = "Tables/restaurantReviews.json";
             if (System.IO.File.Exists(reviewPath))
@@ -184,6 +186,7 @@ namespace DineAuto.Pages.UserDashboards
             public string Location { get; set; }
             public List<MenuItem> Menu { get; set; }
             public string OwnerUsername { get; set; }
+            public int TotalOrders { get; set; }
         }
 
         public class MenuItem

@@ -10,7 +10,8 @@
           "ItemPrice": 22.99
         }
       ],
-      "OwnerUsername": "OwnerAccountTest"
+      "OwnerUsername": "OwnerAccountTest",
+      "TotalOrders" : 0
     }
   ],
   "Seattle": [
@@ -28,7 +29,8 @@
           "ItemPrice": 8.99
         }
       ],
-      "OwnerUsername": "OwnerAccountTest"
+      "OwnerUsername": "OwnerAccountTest",
+      "TotalOrders": 0
     },
     {
       "Name": "Rainy Day Noodles",
@@ -44,7 +46,8 @@
           "ItemPrice": 9.99
         }
       ],
-      "OwnerUsername": "OwnerAccountTest"
+      "OwnerUsername": "OwnerAccountTest",
+      "TotalOrders": 0
     }
   ],
   "Spokane": [
@@ -62,7 +65,8 @@
           "ItemPrice": 7.99
         }
       ],
-      "OwnerUsername": "OwnerAccountTest"
+      "OwnerUsername": "OwnerAccountTest",
+      "TotalOrders": 0
     }
   ],
   "Pullman": [
@@ -80,7 +84,8 @@
           "ItemPrice": 8.49
         }
       ],
-      "OwnerUsername": "OwnerAccountTest"
+      "OwnerUsername": "OwnerAccountTest",
+      "TotalOrders": 0
     },
     {
       "Name": "Wazzu Wings",
@@ -96,7 +101,8 @@
           "ItemPrice": 6.99
         }
       ],
-      "OwnerUsername": "OwnerAccountTest"
+      "OwnerUsername": "OwnerAccountTest",
+      "TotalOrders": 0
     }
   ]
 }

@@ -32,10 +32,10 @@
 
     @if (Model.Restaurants != null && Model.Restaurants.Count > 0)
     {
-        @foreach (var city in Model.Restaurants)
+        foreach (var city in Model.Restaurants)
         {
             <h3>@city.Key</h3>
-            @foreach (var restaurant in city.Value)
+            foreach (var restaurant in city.Value)
             {
                 <div class="restaurant">
                     <h2>@restaurant.Name</h2>

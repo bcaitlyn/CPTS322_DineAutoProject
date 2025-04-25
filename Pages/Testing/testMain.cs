@@ -43,6 +43,12 @@ namespace DineAuto.Testing
             Tests.TestAddItemToCart();
             Tests.TestClearCart();
 
+            // Restaurant Catalog Tests
+            RestaurantCatalogTest rcTest = new RestaurantCatalogTest();
+            rcTest.testLoadRestaurants();
+            rcTest.CalculateStatsTests();
+            rcTest.CalculateStatTests();
+
             logger.LogInformation("DONE TESTING! Running app . . .");
             return 0;
         }

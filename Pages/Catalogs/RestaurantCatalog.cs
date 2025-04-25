@@ -53,6 +53,8 @@ namespace DineAuto.Pages.Catalogs
         // Path to the orders.json file
         private readonly string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Tables", "restaurantCatalog.json");
 
+
+
         /*
          * Method: LoadRestaurants
          * Description: Loads the restaurants and menus from the restaurantCatalog.json file.

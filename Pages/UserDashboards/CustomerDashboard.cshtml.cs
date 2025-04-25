@@ -8,6 +8,9 @@ using System.Xml;
 // this file created by Emily 03/28:
 // Payment feature note: at this time customers ONLY exist in customerFunds.json if they have at some point added funds.
 // So to check if they have enough to pay for their order, you have to check if they're in the table first.
+
+// Potential bug/vulnerability: negativev add balance input is only checked on the front end. THis page does not.
+// fixed 4/24 by Emily
 namespace DineAuto.Pages.UserDashboards.CustomerDashboard
 {
     public class CustomerDashboardModel : PageModel
@@ -53,7 +56,7 @@ namespace DineAuto.Pages.UserDashboards.CustomerDashboard
             }
             else
             {
-                return 0;
+                return 0.0m;
             }
         }
 
@@ -70,14 +73,18 @@ namespace DineAuto.Pages.UserDashboards.CustomerDashboard
 
         public void modifyFunds(string username, decimal amount)
         {
-            if (userFunds.ContainsKey(username))
+            if (userFunds.ContainsKey(username) && amount > 0.0m) // second clause added 4/24
             {
                 // user already has some funds
                 userFunds[username] += amount;
                 SaveUsers();
             }
 
-            else
+            else if (amount <= 0.0m) // added 4/24
+            {
+                return;
+            }
+             else
             {
                 // this is the first time user is adding funds
                 userFunds[username] = amount;

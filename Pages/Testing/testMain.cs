@@ -33,6 +33,14 @@ namespace DineAuto.Testing
             Tests.TestLeaveItemReview();
             Tests.TestOwnerReplyToReview();
 
+            //Tests for Payment
+            Tests.TestPayment_02a();
+            Tests.TestPayment_02b();
+
+            //Tests for Search
+            Tests.TestSearch_03a();
+            Tests.TestSearch_03b();
+
             logger.LogInformation("DONE TESTING! Running app . . .");
             return 0;
         }

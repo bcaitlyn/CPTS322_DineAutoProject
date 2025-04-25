@@ -18,9 +18,6 @@ namespace DineAuto.Pages.OrderHistory
                     this.curUserOrderHistory = orders[HttpContext.Session.GetString("Username")];
                 }
             }
-
-            // We also need to display the order total. 
-
         }
     }
 }

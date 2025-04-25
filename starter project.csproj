@@ -1,20 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-	<PropertyGroup>
-		<TargetFramework>net9.0</TargetFramework>
-		<Nullable>enable</Nullable>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<RootNamespace>DineAuto</RootNamespace>
-	</PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>DineAuto</RootNamespace>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="BCrypt.Net" Version="0.1.0" />
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-		<PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.3" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="wwwroot\images\" />
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net" Version="0.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.3" />
+  </ItemGroup>
 
 </Project>

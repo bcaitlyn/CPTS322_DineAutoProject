@@ -33,7 +33,6 @@ namespace DineAuto.Testing
             Tests.TestLeaveItemReview();
             Tests.TestOwnerReplyToReview();
 
-<<<<<<< HEAD
             //Tests for Payment
             Tests.TestPayment_02a();
             Tests.TestPayment_02b();
@@ -41,7 +40,7 @@ namespace DineAuto.Testing
             //Tests for Search
             Tests.TestSearch_03a();
             Tests.TestSearch_03b();
-=======
+
             // Test Login
             Tests.TestCustomerLogin();
             Tests.TestEmployeeLogin();
@@ -57,7 +56,7 @@ namespace DineAuto.Testing
             rcTest.testLoadRestaurants();
             rcTest.CalculateStatsTests();
             rcTest.CalculateStatTests();
->>>>>>> 62cf6bdca6901ff435176f5223c13bc9b2bdb484
+
 
             logger.LogInformation("DONE TESTING! Running app . . .");
             return 0;

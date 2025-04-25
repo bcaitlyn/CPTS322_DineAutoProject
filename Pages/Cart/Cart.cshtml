@@ -15,6 +15,10 @@
 
 <h2>Your Cart</h2>
 
+<form method="post" class="text-right">
+    <button type="submit" asp-page-handler="OrderHistory" class="btn btn-primary">View Order History</button>
+</form>
+
 @if (Model.userCart != null && Model.userCart.items != null && Model.userCart.items.Count > 0)
 {
     <ul>

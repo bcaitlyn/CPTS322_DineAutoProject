@@ -123,41 +123,6 @@ namespace DineAuto.Pages.Catalogs
             return stat;
 
         }
-        
-
-        /*
-         * Method: increment Orders
-         * Description: iterates through all orders and increments the total orders in 
-         * the matching restaurant.
-         * 
-         * Programmer: Caitlyn Boyd
-         * Last Modified: 4/24/25
-         */
-        public void incrementOrders(Dictionary<string, List<Restaurant>> restaurants)
-        {
-            // load orders
-            OrderMethods orderMethods = new OrderMethods();
-            Dictionary<string, List<OrderObj>> orders = orderMethods.LoadOrders();
-
-            Restaurant foundRestaurant = null;
-            int index = -1;
-            // value = customer whose orders you are parsing
-            foreach (var orderList in orders.Values)
-            {
-                // order = individual order of that person
-                for (int i = 0; i < orderList.Count; i++)
-                {
-                    foreach (var restaurantList in restaurants.Values)
-                    {
-                        if (restaurantList.Exists(r => r.Name == orderList[i].RestaurantName))
-                        {
-                            restaurantList.Find(r => r.Name == orderList[i].RestaurantName).TotalOrders++;
-                        }
-
-                    }
-                }
-            }
-
-        }
+       
     }
 }

@@ -10,24 +10,26 @@
 
 @foreach (var city in Model.Restaurants.Keys)
 {
-    <h4>@city</h4>
-    <ul>
-        @foreach (var restaurant in Model.Restaurants[city])
+<h4>@city</h4>
+<ul>
+    @foreach (var restaurant in Model.Restaurants[city])
         {
-            <li>
-                <a asp-page="/UserDashboards/RestaurantDashboard"
-                   asp-route-city="@city"
-                   asp-route-name="@restaurant.Name">
-                   @restaurant.Name (@restaurant.Cuisine)
-                </a>
-            </li>
+    <li>
+        <a asp-page="/UserDashboards/RestaurantDashboard"
+           asp-route-city="@city"
+           asp-route-name="@restaurant.Name">
+            @restaurant.Name (@restaurant.Cuisine)
+        </a>
+    </li>
         }
-    </ul>
+</ul>
 }
+<!--- CB 4/24/25: Allows user to view statistics of each of their restaurants --->
+<h4>Restaurant Statistics</h4>
 @foreach(var stat in Model.Stats)
 {
-    <h2>@stat.RestaurantName</h2>
-        <p><strong>Total Orders: </strong> @stat.TotalOrders</p>
-        <p><strong>Total Revenue: $</strong> @stat.Revenue</p>
-        }
+<h2>@stat.RestaurantName</h2>
+<p><strong>Total Orders: </strong> @stat.TotalOrders</p>
+<p><strong>Total Revenue: $</strong> @stat.Revenue</p>
+}
 

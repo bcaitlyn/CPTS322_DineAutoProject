@@ -20,7 +20,6 @@ namespace DineAuto.Pages.UserDashboards
         public string City { get; set; }
         public List<MenuItem> Menu { get; set; } = new();
 
-<<<<<<< Updated upstream
         // Yevin 4/23 Owners can view customer reviews on their restaurants
         public class RestaurantReview
         {
@@ -34,8 +33,6 @@ namespace DineAuto.Pages.UserDashboards
         [BindProperty] public string ReplyText { get; set; }
         [BindProperty] public int ReplyIndex { get; set; }
 
-=======
->>>>>>> Stashed changes
 
         public IActionResult OnGet(string city, string name)
         {

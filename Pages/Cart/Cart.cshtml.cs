@@ -116,13 +116,7 @@ namespace DineAuto.Pages.Cart
             // Funds are sufficient → proceed
             userFunds.modifyFunds(username, orderTotal * -1);
 
-            // Save order
-            if (!orders.ContainsKey(username))
-            {
-                orders[username] = new List<OrderObj>();
-            }
-            orders[username].Add(newOrder);
-            orderMethods.SaveOrders(orders);
+            
 
             // Clear cart
             userCart.items.Clear();

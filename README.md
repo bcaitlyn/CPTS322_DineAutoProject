@@ -2,7 +2,7 @@
 
 
 Project Setup:
-Clone the repo into a folder and excute the code in an IDE of your choice.
+Clone the repo into a folder and excute with either VS community or VS code. This code can be run on other IDE's but will require manual adding of files.
 
 Features Guide:
 
